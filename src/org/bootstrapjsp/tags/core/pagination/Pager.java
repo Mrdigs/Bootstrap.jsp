@@ -6,17 +6,15 @@
  */
 package org.bootstrapjsp.tags.core.pagination;
 
-import org.bootstrapjsp.dialect.Html;
-import org.bootstrapjsp.tags.Component;
+import org.bootstrapjsp.tags.html.List;
 import org.tldgen.annotations.BodyContent;
 import org.tldgen.annotations.Tag;
 
 @Tag(bodyContent=BodyContent.SCRIPTLESS,dynamicAttributes=true)
-public class Pager extends Component {
+public class Pager extends List {
 
 	public Pager() {
-		super("ul");
-		super.setAttribute(Html.CLASS_ATTRIBUTE, "pager");
+		super(false, "pager");
 	}
 	
 }

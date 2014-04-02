@@ -25,7 +25,11 @@ public class Config {
 	public static boolean useButtonIcons() {
 		return !"false".equals(getProperty("button.use_icons"));
 	}
-	
+
+	public static boolean validateParents() {
+		return !"false".equals(getProperty("general.validate_parents"));
+	}
+
 	public static String getProperty(String key) {
 		if (Config.properties != null) {
 			if (Config.properties.containsKey(key)) {

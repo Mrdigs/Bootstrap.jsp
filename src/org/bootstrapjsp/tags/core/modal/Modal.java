@@ -11,20 +11,18 @@ import java.io.IOException;
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.JspWriter;
 
-import org.bootstrapjsp.dialect.Html;
-import org.bootstrapjsp.tags.Component;
+import org.bootstrapjsp.tags.html.Div;
 import org.tldgen.annotations.Attribute;
 import org.tldgen.annotations.BodyContent;
 import org.tldgen.annotations.Tag;
 
 @Tag(bodyContent=BodyContent.SCRIPTLESS,dynamicAttributes=true)
-public class Modal extends Component {
+public class Modal extends Div {
 
 	private String show;
 	
 	public Modal() {
-		super(Html.DIV_ELEMENT);
-		super.setAttribute(Html.CLASS_ATTRIBUTE, "modal");
+		super("modal");
 	}
 
 	@Override

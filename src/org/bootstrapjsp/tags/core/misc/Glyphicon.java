@@ -6,11 +6,9 @@
  */
 package org.bootstrapjsp.tags.core.misc;
 
-import javax.servlet.jsp.tagext.BodyTagSupport;
-
 import org.bootstrapjsp.dialect.Html;
-import org.bootstrapjsp.tags.Component;
 import org.bootstrapjsp.tags.Text;
+import org.bootstrapjsp.tags.html.Span;
 import org.tldgen.annotations.Attribute;
 import org.tldgen.annotations.BodyContent;
 import org.tldgen.annotations.Tag;
@@ -22,15 +20,14 @@ import org.tldgen.annotations.Tag;
  * <span class="glyphicon"/>
  */
 @Tag(dynamicAttributes=true,bodyContent=BodyContent.EMPTY,example="&lt;b:glyphicon type=\"asterisk\"/&gt;")
-public class Glyphicon extends Component {
+public class Glyphicon extends Span {
 
 	public Glyphicon() {
 		this(null);
 	}
 
 	public Glyphicon(String type) {
-		super(Html.SPAN_ELEMENT, BodyTagSupport.SKIP_BODY);
-		super.setAttribute(Html.CLASS_ATTRIBUTE, "glyphicon");
+		super("glyphicon");
 		super.appendChild(new Text(" "), BEFORE_BODY);
 		if (type != null) this.setType(type);
 	}

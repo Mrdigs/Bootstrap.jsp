@@ -8,9 +8,8 @@ package org.bootstrapjsp.tags.core.dropdown;
 
 import javax.servlet.jsp.tagext.JspTag;
 
-import org.bootstrapjsp.dialect.Html;
-import org.bootstrapjsp.tags.Component;
 import org.bootstrapjsp.tags.core.nav.Nav;
+import org.bootstrapjsp.tags.html.Div;
 import org.tldgen.annotations.Tag;
 
 /**
@@ -21,11 +20,10 @@ import org.tldgen.annotations.Tag;
  * </p>
  */
 @Tag(dynamicAttributes=true)
-public class Dropdown extends Component {
+public class Dropdown extends Div {
 
 	public Dropdown() {
-		super(Html.DIV_ELEMENT);
-		super.setAttribute(Html.CLASS_ATTRIBUTE, "dropdown");
+		super("dropdown");
 	}
 	
 	@Override

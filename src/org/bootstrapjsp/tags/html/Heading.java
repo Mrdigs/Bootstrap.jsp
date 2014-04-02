@@ -1,5 +1,6 @@
 package org.bootstrapjsp.tags.html;
 
+import org.bootstrapjsp.dialect.Html;
 import org.bootstrapjsp.tags.Component;
 import org.tldgen.annotations.Attribute;
 import org.tldgen.annotations.BodyContent;
@@ -9,12 +10,13 @@ import org.tldgen.annotations.Tag;
 public class Heading extends Component {
 
 	public Heading() {
-		this(1);
+		this(1, null);
 	}
 
-	public Heading(int level) {
+	public Heading(int level, String clazz) {
 		super("");
 		this.setLevel(level);
+		super.setAttribute(Html.CLASS_ATTRIBUTE, clazz);
 	}
 	
 	/**

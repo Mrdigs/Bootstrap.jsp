@@ -9,6 +9,11 @@ import org.tldgen.annotations.Tag;
 public class Div extends Component {
 
 	public Div() {
+		this(null);
+	}
+	
+	public Div(String clazz) {
 		super(Html.DIV_ELEMENT);
+		super.setAttribute(Html.CLASS_ATTRIBUTE, clazz);
 	}
 }

@@ -9,17 +9,16 @@ package org.bootstrapjsp.tags.core.misc;
 import org.bootstrapjsp.dialect.Html;
 import org.bootstrapjsp.facet.ContextFacet;
 import org.bootstrapjsp.facet.MoldFacet;
-import org.bootstrapjsp.tags.Component;
+import org.bootstrapjsp.tags.html.Div;
 import org.tldgen.annotations.Attribute;
 import org.tldgen.annotations.Tag;
 
 @Tag(dynamicAttributes=true)
-public class Alert extends Component {
+public class Alert extends Div {
 
 	public Alert() {
-		super(Html.DIV_ELEMENT);
+		super("alert");
 		super.addFacet(new ContextFacet("alert", null));
-		super.setAttribute(Html.CLASS_ATTRIBUTE, "alert");
 	}
 
 	/**

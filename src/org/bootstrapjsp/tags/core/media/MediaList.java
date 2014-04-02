@@ -6,15 +6,13 @@
  */
 package org.bootstrapjsp.tags.core.media;
 
-import org.bootstrapjsp.dialect.Html;
-import org.bootstrapjsp.tags.Component;
+import org.bootstrapjsp.tags.html.List;
 import org.tldgen.annotations.Tag;
 
 @Tag(name="medialist", dynamicAttributes=true)
-public class MediaList extends Component {
+public class MediaList extends List {
 
 	public MediaList() {
-		super("ul");
-		super.setAttribute(Html.CLASS_ATTRIBUTE, "media-list");
+		super(false, "media-list");
 	}
 }

@@ -6,15 +6,13 @@
  */
 package org.bootstrapjsp.tags.core.carousel;
 
-import org.bootstrapjsp.dialect.Html;
-import org.bootstrapjsp.tags.Component;
+import org.bootstrapjsp.tags.html.Div;
 import org.tldgen.annotations.Tag;
 
 @Tag(name="carouselinner",dynamicAttributes=true)
-public class CarouselInner extends Component {
+public class CarouselInner extends Div {
 
 	public CarouselInner() {
-		super(Html.DIV_ELEMENT);
-		super.setAttribute(Html.CLASS_ATTRIBUTE, "carousel-inner");
+		super("carousel-inner");
 	}
 }

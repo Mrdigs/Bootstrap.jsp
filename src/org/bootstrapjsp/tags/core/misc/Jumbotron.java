@@ -6,19 +6,20 @@
  */
 package org.bootstrapjsp.tags.core.misc;
 
-import org.bootstrapjsp.dialect.Html;
-import org.bootstrapjsp.tags.Component;
+import org.bootstrapjsp.tags.html.Div;
 import org.tldgen.annotations.BodyContent;
 import org.tldgen.annotations.Tag;
 
-/*
- * <div class="jumbotron">...</div>
+/**
+ * A Jumbotron.
+ * <p>
+ * &lt;div class="jumbotron"&gt;...&lt;/div&gt;
+ * </p>
  */
 @Tag(bodyContent=BodyContent.SCRIPTLESS,dynamicAttributes=true)
-public class Jumbotron extends Component {
+public class Jumbotron extends Div {
 
 	public Jumbotron() {
-		super(Html.DIV_ELEMENT);
-		super.setAttribute(Html.CLASS_ATTRIBUTE, "jumbotron");
+		super("jumbotron");
 	}
 }

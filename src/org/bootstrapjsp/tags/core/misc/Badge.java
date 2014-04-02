@@ -6,20 +6,19 @@
  */
 package org.bootstrapjsp.tags.core.misc;
 
-import org.bootstrapjsp.dialect.Html;
 import org.bootstrapjsp.facet.AlignFacet;
-import org.bootstrapjsp.tags.Component;
+import org.bootstrapjsp.tags.html.Span;
+import org.tldgen.annotations.BodyContent;
 import org.tldgen.annotations.Tag;
 
 /**
  * A badge.
  */
-@Tag(dynamicAttributes=true)
-public class Badge extends Component {
+@Tag(bodyContent=BodyContent.SCRIPTLESS, dynamicAttributes=true)
+public class Badge extends Span {
 
 	public Badge() {
-		super(Html.SPAN_ELEMENT);
-		super.setAttribute(Html.CLASS_ATTRIBUTE, "badge");
+		super("badge");
 		super.addFacet(new AlignFacet());
 	}
 

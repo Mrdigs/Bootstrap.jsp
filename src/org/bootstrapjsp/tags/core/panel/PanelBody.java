@@ -6,16 +6,14 @@
  */
 package org.bootstrapjsp.tags.core.panel;
 
-import org.bootstrapjsp.dialect.Html;
-import org.bootstrapjsp.tags.Component;
+import org.bootstrapjsp.tags.html.Div;
 import org.tldgen.annotations.BodyContent;
 import org.tldgen.annotations.Tag;
 
 @Tag(name="panelbody",bodyContent=BodyContent.SCRIPTLESS,dynamicAttributes=true)
-public class PanelBody extends Component {
+public class PanelBody extends Div {
 
 	public PanelBody() {
-		super(Html.DIV_ELEMENT);
-		super.setAttribute(Html.CLASS_ATTRIBUTE, "panel-body");
+		super("panel-body");
 	}
 }

@@ -7,21 +7,20 @@
 package org.bootstrapjsp.tags.core.misc;
 
 import org.bootstrapjsp.dialect.Html;
-import org.bootstrapjsp.tags.Component;
+import org.bootstrapjsp.tags.html.Div;
 import org.tldgen.annotations.Attribute;
 import org.tldgen.annotations.BodyContent;
 import org.tldgen.annotations.Tag;
 
 @Tag(name="tabpane",bodyContent=BodyContent.SCRIPTLESS,dynamicAttributes=true)
-public class TabPane extends Component {
+public class TabPane extends Div {
 
 	private boolean active = false;
 	
 	private boolean fade = false;
 	
 	public TabPane() {
-		super(Html.DIV_ELEMENT);
-		super.setAttribute(Html.CLASS_ATTRIBUTE, "tab-pane");
+		super("tab-pane");
 	}
 
 	@Attribute(rtexprvalue=true)

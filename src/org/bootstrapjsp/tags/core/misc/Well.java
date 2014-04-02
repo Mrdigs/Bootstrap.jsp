@@ -6,9 +6,8 @@
  */
 package org.bootstrapjsp.tags.core.misc;
 
-import org.bootstrapjsp.dialect.Html;
 import org.bootstrapjsp.facet.SizeFacet;
-import org.bootstrapjsp.tags.Component;
+import org.bootstrapjsp.tags.html.Div;
 import org.tldgen.annotations.BodyContent;
 import org.tldgen.annotations.Tag;
 
@@ -18,11 +17,10 @@ import org.tldgen.annotations.Tag;
  * <p>&lt;div class="well"&gt;... &lt;/div&gt;</p>
  */
 @Tag(bodyContent=BodyContent.SCRIPTLESS,dynamicAttributes=true)
-public class Well extends Component {
+public class Well extends Div {
 
 	public Well() {
-		super(Html.DIV_ELEMENT);
-		super.setAttribute(Html.CLASS_ATTRIBUTE, "well");
+		super("well");
 		super.addFacet(new SizeFacet("well", null, "sm", "lg"));
 	}
 }

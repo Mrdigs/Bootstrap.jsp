@@ -6,9 +6,8 @@
  */
 package org.bootstrapjsp.tags.core.pagination;
 
-import org.bootstrapjsp.dialect.Html;
 import org.bootstrapjsp.facet.SizeFacet;
-import org.bootstrapjsp.tags.Component;
+import org.bootstrapjsp.tags.html.List;
 import org.tldgen.annotations.BodyContent;
 import org.tldgen.annotations.Tag;
 
@@ -21,11 +20,10 @@ import org.tldgen.annotations.Tag;
  * </p>
  */
 @Tag(bodyContent=BodyContent.SCRIPTLESS,dynamicAttributes=true)
-public class Pagination extends Component {
+public class Pagination extends List {
 
 	public Pagination() {
-		super("ul");
-		super.setAttribute(Html.CLASS_ATTRIBUTE, "pagination");
+		super(false, "pagination");
 		super.addFacet(new SizeFacet("pagination", null));
 	}
 	

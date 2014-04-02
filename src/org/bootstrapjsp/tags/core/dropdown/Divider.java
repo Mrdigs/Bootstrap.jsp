@@ -7,7 +7,7 @@
 package org.bootstrapjsp.tags.core.dropdown;
 
 import org.bootstrapjsp.dialect.Html;
-import org.bootstrapjsp.tags.Component;
+import org.bootstrapjsp.tags.html.ListItem;
 import org.tldgen.annotations.Tag;
 
 /**
@@ -17,11 +17,10 @@ import org.tldgen.annotations.Tag;
  * </p>
  */
 @Tag(dynamicAttributes=true)
-public class Divider extends Component {
+public class Divider extends ListItem {
 
 	public Divider() {
-		super("li");
-		super.setAttribute(Html.CLASS_ATTRIBUTE, "divider");
+		super("divider");
 		super.setAttribute(Html.ROLE_ATTRIBUTE, "presentation");
 	}
 

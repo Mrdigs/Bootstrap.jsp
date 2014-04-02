@@ -6,15 +6,14 @@
  */
 package org.bootstrapjsp.tags.core.inputgroup;
 
-import org.bootstrapjsp.dialect.Html;
-import org.bootstrapjsp.tags.Component;
+import org.bootstrapjsp.tags.html.Div;
+import org.tldgen.annotations.BodyContent;
 import org.tldgen.annotations.Tag;
 
-@Tag(name="inputgroupbutton", dynamicAttributes=true)
-public class InputGroupButton extends Component {
+@Tag(name="inputgroupbutton", bodyContent=BodyContent.SCRIPTLESS, dynamicAttributes=true)
+public class InputGroupButton extends Div {
 
 	public InputGroupButton() {
-		super(Html.DIV_ELEMENT);
-		super.setAttribute(Html.CLASS_ATTRIBUTE, "input-group-btn");
+		super("input-group-btn");
 	}
 }

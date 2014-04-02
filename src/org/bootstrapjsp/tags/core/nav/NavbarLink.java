@@ -6,18 +6,16 @@
  */
 package org.bootstrapjsp.tags.core.nav;
 
-import org.bootstrapjsp.dialect.Html;
 import org.bootstrapjsp.facet.AlignFacet;
-import org.bootstrapjsp.tags.Component;
+import org.bootstrapjsp.tags.html.Anchor;
 import org.tldgen.annotations.BodyContent;
 import org.tldgen.annotations.Tag;
 
 @Tag(name="navbarlink",bodyContent=BodyContent.SCRIPTLESS,dynamicAttributes=true)
-public class NavbarLink extends Component {
+public class NavbarLink extends Anchor {
 
 	public NavbarLink() {
-		super("a");
-		super.setAttribute(Html.CLASS_ATTRIBUTE, "navbar-link");
+		super("navbar-link");
 		super.addFacet(new AlignFacet("navbar"));
 	}
 	

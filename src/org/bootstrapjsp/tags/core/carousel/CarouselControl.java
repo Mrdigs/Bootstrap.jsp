@@ -11,8 +11,8 @@ import javax.servlet.jsp.tagext.JspTag;
 import org.bootstrapjsp.dialect.Html;
 import org.bootstrapjsp.facet.MoldFacet;
 import org.bootstrapjsp.facet.Moldable;
-import org.bootstrapjsp.tags.Component;
 import org.bootstrapjsp.tags.core.misc.Glyphicon;
+import org.bootstrapjsp.tags.html.Anchor;
 import org.tldgen.annotations.Tag;
 
 /**
@@ -22,11 +22,10 @@ import org.tldgen.annotations.Tag;
  * </p>
  */
 @Tag(name="carouselcontrol",dynamicAttributes=true)
-public class CarouselControl extends Component implements Moldable {
+public class CarouselControl extends Anchor implements Moldable {
 
 	public CarouselControl() {
-		super("a");
-		super.setAttribute(Html.CLASS_ATTRIBUTE, "carousel-control");
+		super("carousel-control");
 		super.addFacet(new MoldFacet("prev", "next"));
 	}
 

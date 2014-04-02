@@ -8,7 +8,7 @@ package org.bootstrapjsp.tags.core.dropdown;
 
 import org.bootstrapjsp.dialect.Html;
 import org.bootstrapjsp.facet.LabelFacet;
-import org.bootstrapjsp.tags.Component;
+import org.bootstrapjsp.tags.html.ListItem;
 import org.tldgen.annotations.Tag;
 
 /**
@@ -18,11 +18,10 @@ import org.tldgen.annotations.Tag;
  * </p>
  */
 @Tag(name="dropdownheader", dynamicAttributes=true)
-public class DropdownHeader extends Component {
+public class DropdownHeader extends ListItem {
 
 	public DropdownHeader() {
-		super("li");
-		super.setAttribute(Html.CLASS_ATTRIBUTE, "dropdown-header");
+		super("dropdown-header");
 		super.setAttribute(Html.ROLE_ATTRIBUTE, "presentation");
 		super.addFacet(new LabelFacet());
 	}

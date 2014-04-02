@@ -10,8 +10,14 @@ import org.tldgen.annotations.Tag;
 public class List extends Component {
 
 	public List() {
-		super("ul");
+		this(false, null);
 	}
+
+	public List(boolean ordered, String clazz) {
+		super(ordered? "ol" : "ul");
+		super.setAttribute(Html.CLASS_ATTRIBUTE, clazz);
+	}
+
 	
 	@Attribute(rtexprvalue=true)
 	public void setUnstyled(boolean unstyled) {

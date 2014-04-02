@@ -13,11 +13,16 @@ import java.util.List;
 import javax.servlet.jsp.JspException;
 
 import org.bootstrapjsp.dialect.Html;
-import org.bootstrapjsp.tags.Component;
+import org.bootstrapjsp.tags.html.Div;
+import org.tldgen.annotations.BodyContent;
 import org.tldgen.annotations.Tag;
 
-@Tag(dynamicAttributes=true)
-public class Column extends Component {
+/**
+ * A Grid Column. The class defaults to "col-md-1", but can be overidden
+ * and/or extended using the "xs", "sm", "md", and "lg" attributes.
+ */
+@Tag(bodyContent=BodyContent.SCRIPTLESS, dynamicAttributes=true)
+public class Column extends Div {
 
 	private static List<String> SIZES = Arrays.asList("xs", "sm", "md", "lg");
 
@@ -25,7 +30,7 @@ public class Column extends Component {
 	
 	@SuppressWarnings("unchecked")
 	public Column() {
-		super(Html.DIV_ELEMENT);
+		super();
 		super.setValidParents(Row.class);
 	}
 

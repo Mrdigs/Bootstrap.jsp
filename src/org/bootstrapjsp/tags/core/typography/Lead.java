@@ -1,6 +1,5 @@
 package org.bootstrapjsp.tags.core.typography;
 
-import org.bootstrapjsp.dialect.Html;
 import org.bootstrapjsp.tags.html.Paragraph;
 import org.tldgen.annotations.BodyContent;
 import org.tldgen.annotations.Tag;
@@ -9,7 +8,6 @@ import org.tldgen.annotations.Tag;
 public class Lead extends Paragraph {
 
 	public Lead() {
-		super();
-		super.setAttribute(Html.CLASS_ATTRIBUTE, "lead");
+		super("lead");
 	}
 }

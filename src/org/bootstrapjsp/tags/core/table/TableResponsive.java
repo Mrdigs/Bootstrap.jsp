@@ -1,6 +1,5 @@
 package org.bootstrapjsp.tags.core.table;
 
-import org.bootstrapjsp.dialect.Html;
 import org.bootstrapjsp.tags.html.Div;
 import org.tldgen.annotations.BodyContent;
 import org.tldgen.annotations.Tag;
@@ -9,8 +8,7 @@ import org.tldgen.annotations.Tag;
 public class TableResponsive extends Div {
 
 	public TableResponsive() {
-		super();
-		super.setAttribute(Html.CLASS_ATTRIBUTE, "table-responsive");
+		super("table-responsive");
 	}
 
 }

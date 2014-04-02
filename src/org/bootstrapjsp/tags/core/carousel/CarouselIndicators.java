@@ -12,7 +12,7 @@ import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.tagext.JspTag;
 
 import org.bootstrapjsp.dialect.Html;
-import org.bootstrapjsp.tags.Component;
+import org.bootstrapjsp.tags.html.List;
 import org.bootstrapjsp.tags.html.ListItem;
 import org.tldgen.annotations.Attribute;
 import org.tldgen.annotations.Tag;
@@ -25,7 +25,7 @@ import org.tldgen.annotations.Tag;
  * </p>
  */
 @Tag(name="carouselindicators",dynamicAttributes=true)
-public class CarouselIndicators extends Component {
+public class CarouselIndicators extends List {
 
 	private Carousel carousel;
 
@@ -36,8 +36,7 @@ public class CarouselIndicators extends Component {
 	private int active = 0;
 	
 	public CarouselIndicators() {
-		super("ol");
-		super.setAttribute(Html.CLASS_ATTRIBUTE, "carousel-indicators");
+		super(true, "carousel-indicators");
 	}
 
 	@Override

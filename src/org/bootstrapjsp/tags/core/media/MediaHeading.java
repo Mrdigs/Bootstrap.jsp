@@ -6,17 +6,16 @@
  */
 package org.bootstrapjsp.tags.core.media;
 
-import org.bootstrapjsp.dialect.Html;
 import org.bootstrapjsp.facet.LabelFacet;
-import org.bootstrapjsp.tags.Component;
+import org.bootstrapjsp.tags.html.Heading;
+import org.tldgen.annotations.BodyContent;
 import org.tldgen.annotations.Tag;
 
-@Tag(name="mediaheading", dynamicAttributes=true)
-public class MediaHeading extends Component {
+@Tag(name="mediaheading", bodyContent=BodyContent.SCRIPTLESS, dynamicAttributes=true)
+public class MediaHeading extends Heading {
 
 	public MediaHeading() {
-		super("h4");
-		super.setAttribute(Html.CLASS_ATTRIBUTE, "media-heading");
+		super(4, "media-heading");
 		super.addFacet(new LabelFacet());
 	}
 }

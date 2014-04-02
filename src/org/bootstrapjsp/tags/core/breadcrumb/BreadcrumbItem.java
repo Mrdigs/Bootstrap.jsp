@@ -7,7 +7,7 @@
 package org.bootstrapjsp.tags.core.breadcrumb;
 
 import org.bootstrapjsp.facet.ActiveFacet;
-import org.bootstrapjsp.tags.Component;
+import org.bootstrapjsp.tags.html.ListItem;
 import org.tldgen.annotations.Tag;
 
 /**
@@ -16,10 +16,10 @@ import org.tldgen.annotations.Tag;
  * &lt;li&gt;...&lt;/li&gt
  */
 @Tag(name="breadcrumbitem",dynamicAttributes=true)
-public class BreadcrumbItem extends Component {
+public class BreadcrumbItem extends ListItem {
 
 	public BreadcrumbItem() {
-		super("li");
+		super();
 		super.addFacet(new ActiveFacet(false));
 	}
 	

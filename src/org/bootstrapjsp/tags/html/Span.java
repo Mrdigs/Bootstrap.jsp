@@ -9,6 +9,11 @@ import org.tldgen.annotations.Tag;
 public class Span extends Component {
 
 	public Span() {
+		this(null);
+	}
+	
+	public Span(String clazz) {
 		super(Html.SPAN_ELEMENT);
+		super.setAttribute(Html.CLASS_ATTRIBUTE, clazz);
 	}
 }

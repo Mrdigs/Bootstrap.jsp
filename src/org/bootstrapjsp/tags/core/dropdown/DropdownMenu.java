@@ -7,7 +7,7 @@
 package org.bootstrapjsp.tags.core.dropdown;
 
 import org.bootstrapjsp.dialect.Html;
-import org.bootstrapjsp.tags.Component;
+import org.bootstrapjsp.tags.html.List;
 import org.tldgen.annotations.Tag;
 
 /**
@@ -17,11 +17,10 @@ import org.tldgen.annotations.Tag;
  * </p>
  */
 @Tag(name="dropdownmenu",dynamicAttributes=true)
-public class DropdownMenu extends Component {
+public class DropdownMenu extends List {
 
 	public DropdownMenu() {
-		super("ul");
-		super.setAttribute(Html.CLASS_ATTRIBUTE, "dropdown-menu");
+		super(false, "dropdown-menu");
 		super.setAttribute(Html.ROLE_ATTRIBUTE, "menu");
 	}
 }

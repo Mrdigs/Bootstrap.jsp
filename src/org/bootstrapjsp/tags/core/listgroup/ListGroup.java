@@ -6,15 +6,22 @@
  */
 package org.bootstrapjsp.tags.core.listgroup;
 
-import org.bootstrapjsp.dialect.Html;
-import org.bootstrapjsp.tags.Component;
+import org.bootstrapjsp.tags.html.List;
+import org.tldgen.annotations.BodyContent;
 import org.tldgen.annotations.Tag;
 
-@Tag(name="listgroup", dynamicAttributes=true)
-public class ListGroup extends Component {
+/**
+ * A List Group. List groups are a flexible and powerful component for 
+ * displaying not only simple lists of elements, but complex ones with 
+ * custom content.
+ * <p>
+ * &lt;ul class="list-group"&gt;...&lt;/ul&gt;
+ * </p>
+ */
+@Tag(name="listgroup", bodyContent=BodyContent.SCRIPTLESS, dynamicAttributes=true)
+public class ListGroup extends List {
 
 	public ListGroup() {
-		super("ul");
-		super.setAttribute(Html.CLASS_ATTRIBUTE, "list-group");
+		super(false, "list-group");
 	}
 }

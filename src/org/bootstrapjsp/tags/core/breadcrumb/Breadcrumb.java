@@ -6,8 +6,7 @@
  */
 package org.bootstrapjsp.tags.core.breadcrumb;
 
-import org.bootstrapjsp.dialect.Html;
-import org.bootstrapjsp.tags.Component;
+import org.bootstrapjsp.tags.html.List;
 import org.tldgen.annotations.Tag;
 
 /**
@@ -16,10 +15,9 @@ import org.tldgen.annotations.Tag;
  * &lt;ol class="breadcrumb"&gt;...&lt;/ol&gt;
  */
 @Tag(dynamicAttributes=true)
-public class Breadcrumb extends Component {
+public class Breadcrumb extends List {
 
 	public Breadcrumb() {
-		super("ol");
-		super.setAttribute(Html.CLASS_ATTRIBUTE, "breadcrumb");
+		super(true, "breadcrumb");
 	}
 }

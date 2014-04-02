@@ -6,19 +6,17 @@
  */
 package org.bootstrapjsp.tags.core.panel;
 
-import org.bootstrapjsp.dialect.Html;
 import org.bootstrapjsp.facet.LabelFacet;
 import org.bootstrapjsp.facet.Labelable;
-import org.bootstrapjsp.tags.Component;
+import org.bootstrapjsp.tags.html.Div;
 import org.tldgen.annotations.BodyContent;
 import org.tldgen.annotations.Tag;
 
 @Tag(name="panelheading",bodyContent=BodyContent.SCRIPTLESS,dynamicAttributes=true)
-public class PanelHeading extends Component implements Labelable {
+public class PanelHeading extends Div implements Labelable {
 
 	public PanelHeading() {
-		super(Html.DIV_ELEMENT);
-		super.setAttribute(Html.CLASS_ATTRIBUTE, "panel-heading");
+		super("panel-heading");
 		super.addFacet(new LabelFacet());
 	}
 	

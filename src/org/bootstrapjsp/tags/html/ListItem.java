@@ -1,5 +1,6 @@
 package org.bootstrapjsp.tags.html;
 
+import org.bootstrapjsp.dialect.Html;
 import org.bootstrapjsp.tags.Component;
 import org.tldgen.annotations.BodyContent;
 import org.tldgen.annotations.Tag;
@@ -8,7 +9,12 @@ import org.tldgen.annotations.Tag;
 public class ListItem extends Component {
 
 	public ListItem() {
-		super("li");
+		this(null);
 	}
-		
+
+	public ListItem(String clazz) {
+		super("li");
+		super.setAttribute(Html.CLASS_ATTRIBUTE, clazz);
+	}
+
 }

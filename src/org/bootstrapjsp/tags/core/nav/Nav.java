@@ -16,17 +16,16 @@ import org.bootstrapjsp.facet.Alignable;
 import org.bootstrapjsp.facet.JustifiedFacet;
 import org.bootstrapjsp.facet.MoldFacet;
 import org.bootstrapjsp.facet.Moldable;
-import org.bootstrapjsp.tags.Component;
+import org.bootstrapjsp.tags.html.List;
 import org.tldgen.annotations.Attribute;
 import org.tldgen.annotations.BodyContent;
 import org.tldgen.annotations.Tag;
 
 @Tag(bodyContent=BodyContent.SCRIPTLESS,dynamicAttributes=true)
-public class Nav extends Component implements Moldable, Alignable {
+public class Nav extends List implements Moldable, Alignable {
 
 	public Nav() {
-		super("ul");
-		super.setAttribute(Html.CLASS_ATTRIBUTE, "nav");
+		super(false, "nav");
 		super.addFacet(new JustifiedFacet("nav", false));
 		super.addFacet(new MoldFacet("tabs", "pills"));
 		super.addFacet(new AlignFacet(null));

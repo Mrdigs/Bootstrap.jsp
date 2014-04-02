@@ -6,17 +6,15 @@
  */
 package org.bootstrapjsp.tags.core.form;
 
-import org.bootstrapjsp.dialect.Html;
-import org.bootstrapjsp.tags.Component;
+import org.bootstrapjsp.tags.html.Div;
 import org.tldgen.annotations.BodyContent;
 import org.tldgen.annotations.Tag;
 
 @Tag(name="formgroup",bodyContent=BodyContent.SCRIPTLESS,dynamicAttributes=true)
-public class FormGroup extends Component {
+public class FormGroup extends Div {
 
 	public FormGroup() {
-		super(Html.DIV_ELEMENT);
-		super.setAttribute(Html.CLASS_ATTRIBUTE, "form-group");
+		super("form-group");
 	}
 
 }

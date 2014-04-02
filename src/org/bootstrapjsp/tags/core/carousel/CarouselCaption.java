@@ -6,9 +6,8 @@
  */
 package org.bootstrapjsp.tags.core.carousel;
 
-import org.bootstrapjsp.dialect.Html;
 import org.bootstrapjsp.facet.LabelFacet;
-import org.bootstrapjsp.tags.Component;
+import org.bootstrapjsp.tags.html.Div;
 import org.tldgen.annotations.Tag;
 
 /**
@@ -18,11 +17,10 @@ import org.tldgen.annotations.Tag;
  * </p>
  */
 @Tag(name="carouselcaption",dynamicAttributes=true)
-public class CarouselCaption extends Component {
+public class CarouselCaption extends Div {
 
 	public CarouselCaption() {
-		super(Html.DIV_ELEMENT);
-		super.setAttribute(Html.CLASS_ATTRIBUTE, "carousel-caption");
+		super("carousel-caption");
 		super.addFacet(new LabelFacet());
 	}
 	

@@ -6,16 +6,14 @@
  */
 package org.bootstrapjsp.tags.core.listgroup;
 
-import org.bootstrapjsp.dialect.Html;
-import org.bootstrapjsp.tags.Component;
+import org.bootstrapjsp.tags.html.Paragraph;
 import org.tldgen.annotations.Tag;
 
 @Tag(name="listgroupitemtext", dynamicAttributes=true)
-public class ListGroupItemText extends Component {
+public class ListGroupItemText extends Paragraph {
 
 	public ListGroupItemText() {
-		super("p");
-		super.setAttribute(Html.CLASS_ATTRIBUTE, "list-group-item-text");
+		super("list-group-item-text");
 	}
 
 }

@@ -8,9 +8,8 @@ package org.bootstrapjsp.tags.core.carousel;
 
 import javax.servlet.jsp.tagext.JspTag;
 
-import org.bootstrapjsp.dialect.Html;
 import org.bootstrapjsp.facet.ActiveFacet;
-import org.bootstrapjsp.tags.Component;
+import org.bootstrapjsp.tags.html.Div;
 import org.tldgen.annotations.Attribute;
 import org.tldgen.annotations.Tag;
 
@@ -21,11 +20,10 @@ import org.tldgen.annotations.Tag;
  * </p>
  */
 @Tag(name="carouselitem",dynamicAttributes=true)
-public class CarouselItem extends Component {
+public class CarouselItem extends Div {
 
 	public CarouselItem() {
-		super(Html.DIV_ELEMENT);
-		super.setAttribute(Html.CLASS_ATTRIBUTE, "item");
+		super("item");
 		super.addFacet(new ActiveFacet(false));
 	}
 

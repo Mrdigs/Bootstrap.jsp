@@ -6,17 +6,22 @@
  */
 package org.bootstrapjsp.tags.core.inputgroup;
 
-import org.bootstrapjsp.dialect.Html;
 import org.bootstrapjsp.facet.SizeFacet;
-import org.bootstrapjsp.tags.Component;
+import org.bootstrapjsp.tags.html.Div;
+import org.tldgen.annotations.BodyContent;
 import org.tldgen.annotations.Tag;
 
-@Tag(name="inputgroup", dynamicAttributes=true)
-public class InputGroup extends Component {
+/**
+ * An Input Group.
+ * <p>
+ * &lt;div class="input-group"&gt;...&lt;/div&gt;
+ * </p>
+ */
+@Tag(name="inputgroup", bodyContent=BodyContent.SCRIPTLESS, dynamicAttributes=true)
+public class InputGroup extends Div {
 
 	public InputGroup() {
-		super(Html.DIV_ELEMENT);
-		super.setAttribute(Html.CLASS_ATTRIBUTE, "input-group");
+		super("input-group");
 		super.addFacet(new SizeFacet("input-group", null));
 	}
 }

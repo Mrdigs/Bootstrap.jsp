@@ -1,5 +1,6 @@
 package org.bootstrapjsp.tags.html;
 
+import org.bootstrapjsp.dialect.Html;
 import org.bootstrapjsp.tags.Component;
 import org.tldgen.annotations.BodyContent;
 import org.tldgen.annotations.Tag;
@@ -8,6 +9,11 @@ import org.tldgen.annotations.Tag;
 public class Paragraph extends Component {
 
 	public Paragraph() {
+		this(null);
+	}
+	
+	public Paragraph(String clazz) {
 		super("p");
+		super.setAttribute(Html.CLASS_ATTRIBUTE, clazz);
 	}
 }

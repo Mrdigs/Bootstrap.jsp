@@ -12,18 +12,18 @@ import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.tagext.JspTag;
 
 import org.bootstrapjsp.dialect.Html;
-import org.bootstrapjsp.tags.Component;
+import org.bootstrapjsp.tags.html.Div;
 import org.tldgen.annotations.Attribute;
 import org.tldgen.annotations.BodyContent;
 import org.tldgen.annotations.Tag;
 
 @Tag(bodyContent=BodyContent.SCRIPTLESS,dynamicAttributes=true)
-public class Container extends Component {
+public class Container extends Div {
 
 	private boolean fluid = false;
 	
 	public Container() {
-		super(Html.DIV_ELEMENT);
+		super();
 	}
 
 	@Override

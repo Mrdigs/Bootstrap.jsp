@@ -6,16 +6,14 @@
  */
 package org.bootstrapjsp.tags.core.misc;
 
-import org.bootstrapjsp.dialect.Html;
-import org.bootstrapjsp.tags.Component;
+import org.bootstrapjsp.tags.html.Div;
 import org.tldgen.annotations.BodyContent;
 import org.tldgen.annotations.Tag;
 
 @Tag(name="tabcontent",bodyContent=BodyContent.SCRIPTLESS,dynamicAttributes=true)
-public class TabContent extends Component {
+public class TabContent extends Div {
 
 	public TabContent() {
-		super(Html.DIV_ELEMENT);
-		super.setAttribute(Html.CLASS_ATTRIBUTE, "tab-content");
+		super("tab-content");
 	}
 }

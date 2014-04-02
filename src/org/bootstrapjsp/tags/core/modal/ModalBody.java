@@ -6,17 +6,15 @@
  */
 package org.bootstrapjsp.tags.core.modal;
 
-import org.bootstrapjsp.dialect.Html;
-import org.bootstrapjsp.tags.Component;
+import org.bootstrapjsp.tags.html.Div;
 import org.tldgen.annotations.BodyContent;
 import org.tldgen.annotations.Tag;
 
 @Tag(name="modalbody",bodyContent=BodyContent.SCRIPTLESS,dynamicAttributes=true)
-public class ModalBody extends Component {
+public class ModalBody extends Div {
 
 	public ModalBody() {
-		super(Html.DIV_ELEMENT);
-		super.setAttribute(Html.CLASS_ATTRIBUTE, "modal-body");
+		super("modal-body");
 	}
 
 }

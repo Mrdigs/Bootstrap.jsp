@@ -60,12 +60,14 @@ public abstract class Component extends HtmlTagSupport {
 
 	@Override
 	public void setAttribute(String name, Object value) {
-		boolean set = false;
-		for (Facet<? extends BaseTag, ?> facet : this.facets) {
-			set = set || facet.setValue(name, value);
-		}
-		if (!set) {
-			super.setAttribute(name, value);
+		if (value != null) {
+			boolean set = false;
+			for (Facet<? extends BaseTag, ?> facet : this.facets) {
+				set = set || facet.setValue(name, value);
+			}
+			if (!set) {
+				super.setAttribute(name, value);
+			}
 		}
 	}
 		

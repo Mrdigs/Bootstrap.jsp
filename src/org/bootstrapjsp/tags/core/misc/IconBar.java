@@ -6,13 +6,17 @@
  */
 package org.bootstrapjsp.tags.core.misc;
 
-import org.bootstrapjsp.dialect.Html;
-import org.bootstrapjsp.tags.Component;
+import org.bootstrapjsp.tags.html.Span;
+import org.tldgen.annotations.BodyContent;
+import org.tldgen.annotations.Tag;
 
-public class IconBar extends Component {
+/**
+ * A bar icon, typically used for collapse buttons.
+ */
+@Tag(name="iconbar",bodyContent=BodyContent.EMPTY,dynamicAttributes=true)
+public class IconBar extends Span {
 
 	public IconBar() {
-		super(Html.SPAN_ELEMENT);
-		super.setAttribute(Html.CLASS_ATTRIBUTE, "icon-bar");
+		super("icon-bar");
 	}
 }

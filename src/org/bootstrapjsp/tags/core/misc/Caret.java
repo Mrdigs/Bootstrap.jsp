@@ -6,19 +6,15 @@
  */
 package org.bootstrapjsp.tags.core.misc;
 
-import javax.servlet.jsp.tagext.BodyTagSupport;
-
-import org.bootstrapjsp.dialect.Html;
-import org.bootstrapjsp.tags.Component;
+import org.bootstrapjsp.tags.html.Span;
 import org.tldgen.annotations.BodyContent;
 import org.tldgen.annotations.Tag;
 
 @Tag(bodyContent=BodyContent.EMPTY,dynamicAttributes=true)
-public class Caret extends Component {
+public class Caret extends Span {
 
 	public Caret() {
-		super(Html.SPAN_ELEMENT, BodyTagSupport.SKIP_BODY);
-		super.setAttribute(Html.CLASS_ATTRIBUTE, "caret");
+		super("caret");
 	}
 
 }

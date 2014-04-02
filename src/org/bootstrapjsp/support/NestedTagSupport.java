@@ -15,6 +15,8 @@ import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.tagext.JspTag;
 import javax.servlet.jsp.tagext.SimpleTagSupport;
 
+import org.bootstrapjsp.util.Config;
+
 public abstract class NestedTagSupport extends SimpleTagSupport implements BaseTag {
 
 	public static final int BEFORE_BODY = -1;
@@ -96,7 +98,9 @@ public abstract class NestedTagSupport extends SimpleTagSupport implements BaseT
 	}
 	
 	public void setValidParents(Class<? extends BaseTag>... parents) {
-		this.parents.addAll(Arrays.asList(parents));
+		if (Config.validateParents()) {
+			this.parents.addAll(Arrays.asList(parents));
+		}
 	}
 
 	@SuppressWarnings("unchecked")

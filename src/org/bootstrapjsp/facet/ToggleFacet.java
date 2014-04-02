@@ -14,7 +14,7 @@ import org.bootstrapjsp.tags.Component;
 public class ToggleFacet extends Facet<Component, String> {
 
 	private static List<String> VALID = Arrays.asList(
-		"tooltip", "modal"
+		"tooltip", "modal", "tab"
 	);
 
 	public ToggleFacet() {

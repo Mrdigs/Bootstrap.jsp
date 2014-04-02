@@ -1,5 +1,6 @@
 package org.bootstrapjsp.tags.html;
 
+import org.bootstrapjsp.dialect.Html;
 import org.bootstrapjsp.tags.Component;
 import org.tldgen.annotations.BodyContent;
 import org.tldgen.annotations.Tag;
@@ -8,7 +9,11 @@ import org.tldgen.annotations.Tag;
 public class Anchor extends Component {
 
 	public Anchor() {
-		super("a");
+		this(null);
 	}
-		
+
+	public Anchor(String clazz) {
+		super("a");
+		super.setAttribute(Html.CLASS_ATTRIBUTE, clazz);
+	}
 }

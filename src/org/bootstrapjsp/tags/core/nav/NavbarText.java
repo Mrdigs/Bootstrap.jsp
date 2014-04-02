@@ -6,18 +6,16 @@
  */
 package org.bootstrapjsp.tags.core.nav;
 
-import org.bootstrapjsp.dialect.Html;
 import org.bootstrapjsp.facet.AlignFacet;
-import org.bootstrapjsp.tags.Component;
+import org.bootstrapjsp.tags.html.Paragraph;
 import org.tldgen.annotations.BodyContent;
 import org.tldgen.annotations.Tag;
 
 @Tag(name="navbartext",bodyContent=BodyContent.SCRIPTLESS,dynamicAttributes=true)
-public class NavbarText extends Component {
+public class NavbarText extends Paragraph {
 
 	public NavbarText() {
-		super("p");
-		super.setAttribute(Html.CLASS_ATTRIBUTE, "navbar-text");
+		super("navbar-text");
 		super.addFacet(new AlignFacet("navbar"));
 	}
 	

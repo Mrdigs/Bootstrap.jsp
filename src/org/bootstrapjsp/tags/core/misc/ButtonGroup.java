@@ -13,17 +13,17 @@ import javax.servlet.jsp.JspException;
 import org.bootstrapjsp.dialect.Html;
 import org.bootstrapjsp.facet.JustifiedFacet;
 import org.bootstrapjsp.facet.SizeFacet;
-import org.bootstrapjsp.tags.Component;
+import org.bootstrapjsp.tags.html.Div;
 import org.tldgen.annotations.BodyContent;
 import org.tldgen.annotations.Tag;
 
 @Tag(name="buttongroup",bodyContent=BodyContent.SCRIPTLESS,dynamicAttributes=true)
-public class ButtonGroup extends Component {
+public class ButtonGroup extends Div {
 
 	private boolean vertical = false;
 
 	public ButtonGroup() {
-		super(Html.DIV_ELEMENT);
+		super();
 		super.addFacet(new JustifiedFacet("btn-group", false));
 		super.addFacet(new SizeFacet("btn-group", null));
 	}

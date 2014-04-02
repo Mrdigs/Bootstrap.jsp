@@ -6,18 +6,16 @@
  */
 package org.bootstrapjsp.tags.core.modal;
 
-import org.bootstrapjsp.dialect.Html;
 import org.bootstrapjsp.facet.IconFacet;
-import org.bootstrapjsp.tags.Component;
+import org.bootstrapjsp.tags.html.Heading;
 import org.tldgen.annotations.BodyContent;
 import org.tldgen.annotations.Tag;
 
 @Tag(name="modaltitle",bodyContent=BodyContent.SCRIPTLESS,dynamicAttributes=true)
-public class ModalTitle extends Component {
+public class ModalTitle extends Heading {
 
 	public ModalTitle() {
-		super("h4");
-		super.setAttribute(Html.CLASS_ATTRIBUTE, "modal-title");
+		super(4, "modal-title");
 		super.addFacet(new IconFacet());
 	}
 	

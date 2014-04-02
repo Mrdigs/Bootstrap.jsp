@@ -6,17 +6,22 @@
  */
 package org.bootstrapjsp.tags.core.inputgroup;
 
-import org.bootstrapjsp.dialect.Html;
 import org.bootstrapjsp.facet.LabelFacet;
-import org.bootstrapjsp.tags.Component;
+import org.bootstrapjsp.tags.html.Span;
+import org.tldgen.annotations.BodyContent;
 import org.tldgen.annotations.Tag;
 
-@Tag(name="inputgroupaddon", dynamicAttributes=true)
-public class InputGroupAddon extends Component {
+/**
+ * An Input Group Addon.
+ * <p>
+ * &lt;span class="input-group-addon"&gt;...&lt;/span&gt;
+ * </p>
+ */
+@Tag(name="inputgroupaddon", bodyContent=BodyContent.SCRIPTLESS, dynamicAttributes=true)
+public class InputGroupAddon extends Span {
 
 	public InputGroupAddon() {
-		super(Html.SPAN_ELEMENT);
-		super.setAttribute(Html.CLASS_ATTRIBUTE, "input-group-addon");
+		super("input-group-addon");
 		super.addFacet(new LabelFacet());
 	}
 

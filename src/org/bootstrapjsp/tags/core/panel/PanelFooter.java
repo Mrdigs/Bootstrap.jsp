@@ -6,16 +6,14 @@
  */
 package org.bootstrapjsp.tags.core.panel;
 
-import org.bootstrapjsp.dialect.Html;
-import org.bootstrapjsp.tags.Component;
+import org.bootstrapjsp.tags.html.Div;
 import org.tldgen.annotations.BodyContent;
 import org.tldgen.annotations.Tag;
 
 @Tag(name="panelfooter",bodyContent=BodyContent.SCRIPTLESS,dynamicAttributes=true)
-public class PanelFooter extends Component {
+public class PanelFooter extends Div {
 
 	public PanelFooter() {
-		super(Html.DIV_ELEMENT);
-		super.setAttribute(Html.CLASS_ATTRIBUTE, "panel-footer");
+		super("panel-footer");
 	}
 }

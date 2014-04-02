@@ -6,18 +6,15 @@
  */
 package org.bootstrapjsp.tags.core.nav;
 
-import org.bootstrapjsp.dialect.Html;
-import org.bootstrapjsp.tags.Component;
+import org.bootstrapjsp.tags.html.Div;
 import org.tldgen.annotations.BodyContent;
 import org.tldgen.annotations.Tag;
 
 @Tag(name="navbarcollapse",bodyContent=BodyContent.SCRIPTLESS,dynamicAttributes=true)
-public class NavbarCollapse extends Component {
+public class NavbarCollapse extends Div {
 	
 	public NavbarCollapse() {
-		super("div");
-		super.setAttribute(Html.CLASS_ATTRIBUTE, "collapse");
-		super.setAttribute(Html.CLASS_ATTRIBUTE, "navbar-collapse");
+		super("collapse navbar-collapse");
 	}
 
 }

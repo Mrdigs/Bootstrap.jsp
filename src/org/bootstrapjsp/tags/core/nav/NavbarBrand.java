@@ -6,17 +6,15 @@
  */
 package org.bootstrapjsp.tags.core.nav;
 
-import org.bootstrapjsp.dialect.Html;
-import org.bootstrapjsp.tags.Component;
+import org.bootstrapjsp.tags.html.Anchor;
 import org.tldgen.annotations.BodyContent;
 import org.tldgen.annotations.Tag;
 
 @Tag(name="navbarbrand",bodyContent=BodyContent.SCRIPTLESS,dynamicAttributes=true)
-public class NavbarBrand extends Component {
+public class NavbarBrand extends Anchor {
 	
 	public NavbarBrand() {
-		super("a");
-		super.setAttribute(Html.CLASS_ATTRIBUTE, "navbar-brand");
+		super("navbar-brand");
 	}
 
 }

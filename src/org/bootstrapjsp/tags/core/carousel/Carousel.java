@@ -12,10 +12,9 @@ import java.util.Set;
 
 import javax.servlet.jsp.JspException;
 
-import org.bootstrapjsp.dialect.Html;
 import org.bootstrapjsp.facet.ActiveFacet;
 import org.bootstrapjsp.facet.MoldFacet;
-import org.bootstrapjsp.tags.Component;
+import org.bootstrapjsp.tags.html.Div;
 import org.tldgen.annotations.Attribute;
 import org.tldgen.annotations.Tag;
 
@@ -26,7 +25,7 @@ import org.tldgen.annotations.Tag;
  * </p>
  */
 @Tag(dynamicAttributes=true)
-public class Carousel extends Component {
+public class Carousel extends Div {
 
 	private Set<CarouselItem> items = new LinkedHashSet<CarouselItem>();
 	
@@ -35,9 +34,7 @@ public class Carousel extends Component {
 	private boolean indicators = true;
 
 	public Carousel() {
-		super(Html.DIV_ELEMENT);
-		super.setAttribute(Html.CLASS_ATTRIBUTE, "carousel");
-		super.setAttribute(Html.CLASS_ATTRIBUTE, "slide");
+		super("carousel slide");
 		super.appendChild(new CarouselInner());
 	}
 

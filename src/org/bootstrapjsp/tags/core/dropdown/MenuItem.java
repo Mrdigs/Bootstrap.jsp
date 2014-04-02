@@ -10,9 +10,9 @@ import org.bootstrapjsp.dialect.Html;
 import org.bootstrapjsp.facet.DisabledFacet;
 import org.bootstrapjsp.facet.LabelFacet;
 import org.bootstrapjsp.facet.Labelable;
-import org.bootstrapjsp.tags.Component;
 import org.bootstrapjsp.tags.Text;
 import org.bootstrapjsp.tags.html.Anchor;
+import org.bootstrapjsp.tags.html.ListItem;
 import org.tldgen.annotations.Attribute;
 import org.tldgen.annotations.Tag;
 
@@ -24,12 +24,12 @@ import org.tldgen.annotations.Tag;
  * </p>
  */
 @Tag(name="menuitem", dynamicAttributes=true)
-public class MenuItem extends Component implements Labelable {
+public class MenuItem extends ListItem implements Labelable {
 
 	private Anchor anchor = new Anchor();
 	
 	public MenuItem() {
-		super("li");
+		super();
 		super.setAttribute(Html.ROLE_ATTRIBUTE, "presentation");
 		this.anchor.setAttribute(Html.ROLE_ATTRIBUTE, "menuitem");
 		this.anchor.setAttribute("tabindex", "-1");

@@ -6,7 +6,6 @@
  */
 package org.bootstrapjsp.tags.core.panel;
 
-import org.bootstrapjsp.dialect.Html;
 import org.bootstrapjsp.facet.ContextFacet;
 import org.bootstrapjsp.facet.LabelFacet;
 import org.bootstrapjsp.facet.Labelable;
@@ -18,8 +17,7 @@ import org.tldgen.annotations.Tag;
 public class Panel extends Div implements Labelable {
 	
 	public Panel() {
-		super();
-		super.setAttribute(Html.CLASS_ATTRIBUTE, "panel");
+		super("panel");
 		super.addFacet(new ContextFacet("panel", "default"));
 		super.addFacet(new LabelFacet());
 	}

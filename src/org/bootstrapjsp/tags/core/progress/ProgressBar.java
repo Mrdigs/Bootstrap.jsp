@@ -12,21 +12,20 @@ import javax.servlet.jsp.JspException;
 
 import org.bootstrapjsp.dialect.Html;
 import org.bootstrapjsp.facet.ContextFacet;
-import org.bootstrapjsp.tags.Component;
 import org.bootstrapjsp.tags.Text;
+import org.bootstrapjsp.tags.html.Div;
 import org.bootstrapjsp.tags.html.Span;
 import org.tldgen.annotations.Attribute;
 import org.tldgen.annotations.BodyContent;
 import org.tldgen.annotations.Tag;
 
 @Tag(name="progressbar",bodyContent=BodyContent.SCRIPTLESS,dynamicAttributes=true)
-public class ProgressBar extends Component {
+public class ProgressBar extends Div {
 
 	private String label;
 	
 	public ProgressBar() {
-		super(Html.DIV_ELEMENT);
-		super.setAttribute(Html.CLASS_ATTRIBUTE, "progress-bar");
+		super("progress-bar");
 		super.setAttribute(Html.ROLE_ATTRIBUTE, "progressbar");
 		super.addFacet(new ContextFacet("progress-bar", null));
 		// super.addFacet(new LabelFacet());

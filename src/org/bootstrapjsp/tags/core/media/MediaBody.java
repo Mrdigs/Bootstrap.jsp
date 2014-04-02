@@ -6,18 +6,17 @@
  */
 package org.bootstrapjsp.tags.core.media;
 
-import org.bootstrapjsp.dialect.Html;
 import org.bootstrapjsp.facet.LabelFacet;
 import org.bootstrapjsp.facet.Labelable;
-import org.bootstrapjsp.tags.Component;
+import org.bootstrapjsp.tags.html.Div;
+import org.tldgen.annotations.BodyContent;
 import org.tldgen.annotations.Tag;
 
-@Tag(name="mediabody", dynamicAttributes=true)
-public class MediaBody extends Component implements Labelable {
+@Tag(name="mediabody", bodyContent=BodyContent.SCRIPTLESS, dynamicAttributes=true)
+public class MediaBody extends Div implements Labelable {
 
 	public MediaBody() {
-		super("div");
-		super.setAttribute(Html.CLASS_ATTRIBUTE, "media-body");
+		super("media-body");
 		super.addFacet(new LabelFacet());
 	}
 	

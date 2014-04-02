@@ -10,20 +10,24 @@ import java.io.IOException;
 
 import javax.servlet.jsp.JspException;
 
-import org.bootstrapjsp.dialect.Html;
 import org.bootstrapjsp.facet.ActiveFacet;
 import org.bootstrapjsp.facet.ContextFacet;
 import org.bootstrapjsp.facet.LabelFacet;
 import org.bootstrapjsp.facet.Labelable;
-import org.bootstrapjsp.tags.Component;
+import org.bootstrapjsp.tags.html.ListItem;
 import org.tldgen.annotations.Tag;
 
+/**
+ * A List Group Item. 
+ * <p>
+ * &lt;li class="list-group-item"&gt;...&lt;/li&gt;
+ * </p>
+ */
 @Tag(name="listgroupitem", dynamicAttributes=true)
-public class ListGroupItem extends Component implements Labelable {
+public class ListGroupItem extends ListItem implements Labelable {
 	
 	public ListGroupItem() {
-		super("li");
-		super.setAttribute(Html.CLASS_ATTRIBUTE, "list-group-item");
+		super("list-group-item");
 		super.addFacet(new ContextFacet("list-group-item", null));
 		super.addFacet(new ActiveFacet(false));
 		super.addFacet(new LabelFacet());

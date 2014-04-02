@@ -6,17 +6,15 @@
  */
 package org.bootstrapjsp.tags.core.listgroup;
 
-import org.bootstrapjsp.dialect.Html;
 import org.bootstrapjsp.facet.LabelFacet;
-import org.bootstrapjsp.tags.Component;
+import org.bootstrapjsp.tags.html.Paragraph;
 import org.tldgen.annotations.Tag;
 
 @Tag(name="listgroupitemheading", dynamicAttributes=true)
-public class ListGroupItemHeading extends Component {
+public class ListGroupItemHeading extends Paragraph {
 
 	public ListGroupItemHeading() {
-		super("p");
-		super.setAttribute(Html.CLASS_ATTRIBUTE, "list-group-item-text");
+		super("list-group-item-text");
 		super.addFacet(new LabelFacet());
 	}
 	

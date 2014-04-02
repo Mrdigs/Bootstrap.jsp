@@ -6,7 +6,6 @@
  */
 package org.bootstrapjsp.tags.core.misc;
 
-import org.bootstrapjsp.dialect.Html;
 import org.bootstrapjsp.facet.ContextFacet;
 import org.bootstrapjsp.tags.html.Span;
 import org.tldgen.annotations.BodyContent;
@@ -16,8 +15,7 @@ import org.tldgen.annotations.Tag;
 public class Label extends Span {
 
 	public Label() {
-		super();
-		super.setAttribute(Html.CLASS_ATTRIBUTE, "label");
+		super("label");
 		super.addFacet(new ContextFacet("label", "default"));
 	}
 

@@ -10,23 +10,21 @@ import java.io.IOException;
 
 import javax.servlet.jsp.JspException;
 
-import org.bootstrapjsp.dialect.Html;
 import org.bootstrapjsp.facet.LabelFacet;
 import org.bootstrapjsp.facet.Labelable;
-import org.bootstrapjsp.tags.Component;
 import org.bootstrapjsp.tags.Text;
 import org.bootstrapjsp.tags.core.misc.Button;
+import org.bootstrapjsp.tags.html.Div;
 import org.tldgen.annotations.BodyContent;
 import org.tldgen.annotations.Tag;
 
 @Tag(name="modalheader",bodyContent=BodyContent.SCRIPTLESS,dynamicAttributes=true)
-public class ModalHeader extends Component implements Labelable {
+public class ModalHeader extends Div implements Labelable {
 
 	private final ModalTitle modalTitle = new ModalTitle();
 	
 	public ModalHeader() {
-		super(Html.DIV_ELEMENT);
-		super.setAttribute(Html.CLASS_ATTRIBUTE, "modal-header");
+		super("modal-header");
 		super.addFacet(new LabelFacet());
 	}
 
