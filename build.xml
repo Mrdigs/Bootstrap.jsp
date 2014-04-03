@@ -21,7 +21,14 @@
 				<param name="-displayName" value="Bootstrap.jsp"/>
 				<param name="-uri" value="http://bootstrapjsp.org/"/>
 				<param name="-tldFolder" value="build/classes/META-INF"/>
+				<param name="-htmlFolder" value="docs/tags"/>
 			</doclet>
 		</javadoc>
 	</target>
+
+	<target name="docs" description="Create Javadocs" depends="classpath">
+		<javadoc access="private" useexternalfile="true" sourcepath="src" classpathref="tomcat" destdir="docs/api">
+		</javadoc>
+	</target>
+	
 </project>

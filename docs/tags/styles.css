@@ -1,0 +1,165 @@
+/* 
+ * Default CSS used by the TLDGen generated documentation
+ * This file is available under the Apache License V2
+ * http://www.apache.org/licenses/LICENSE-2.0.html
+ */
+
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	padding-top: 2em;
+	font: normal 14px helvetica, arial, sans-serif;
+	color: #000;
+	line-height: 1.5em;
+	background-color: #fff;
+}
+img {
+	border: none;
+}
+a {
+	font: normal 100% helvetica, arial, sans-serif;
+	color: #00e;
+	text-decoration: underline;
+}
+a:hover {
+	color: #00f;
+}
+body pre {
+	line-height: 1.3em;
+}
+code {
+	font-weight: bold;
+}
+p {
+	font-weight: normal;
+	margin-bottom: 6px;
+}
+p span {
+	color: #036;
+	padding-right: 4px;
+	font-weight: bold;
+}
+ul li {
+	list-style: square;
+	margin: .5em 0 .5em 1em;
+}
+h1, h2, h3 {
+	margin: 0 0 .7em 0;
+	font: bold 210% helvetica, arial, sans-serif;
+	color: #036;
+}
+h2 {
+	font-size: 150%;
+	margin-top: 1em;
+}
+h3 {
+	font-size: 120%;
+	margin-top: 1em;
+}
+strong {
+	font-weight: bold;
+}
+#custom-doc {
+	width: 960px;
+	min-width: 250px;
+}
+.deprecated {
+	text-decoration: line-through;
+}
+.selected {
+	border: 1px solid #BBBBBB;
+	background: #F0F0F0;
+}
+.flags {
+	width: 60;
+	overflow: hidden;
+}
+.flags span {
+	float: left;
+	height: 17px;
+	text-indent: -2000px;
+	width: 20px;
+}
+.flags .required {
+	background: transparent url('required.png') no-repeat 0 0;
+}
+.flags .deprecated {
+	background: transparent url('deprecated.png') no-repeat 0 0;
+}
+.flags .rtexprvalue {
+	background: transparent url('rtexprvalue.png') no-repeat 0 0;
+}
+.menu {
+	font-weight: bold;
+}
+.menu ol {
+	margin: 1em 0 0 2em;
+}
+.menu ol li {
+	margin: 0;
+	padding: 0;
+	color: #999;
+	list-style: none;
+}
+.menu ol li a {
+	padding: 4px;
+	color: #39638e;
+	display: block;
+	font-weight: bold;
+	text-decoration: none;
+}
+.menu ol li a:hover, .yui-b ul li a:active {
+	background-color: #a2c4e7;
+}
+.left-delimiter {
+   border: 0px;
+   border-style: solid;
+	border-color: #bbb;
+}
+.left-delimiter {
+   border-left-width: 0.25px;
+}
+/*
+.bottom-delimiter {
+   border-bottom-width: 0.25px;
+   margin-left: 0;
+	padding-left: 8px;
+   margin-right: 8px;
+   margin-top: 8px;
+   padding-bottom: 3px;
+}
+*/
+table {
+	margin: 8px 0;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+table thead {
+	font-weight: bold;
+	background-color: #f0f0f0;
+}
+td, th {
+   padding: .5em 1em;
+	border: 1px solid #bbb;
+}
+.td-right {
+   border-left: 0px;
+}
+h3 {
+   margin-bottom: 6px;
+}
+#ft {
+	font-size: 12px;
+	text-align: center;
+	color: #036;
+	background-color:#eee;
+	border:1px dotted #aaa;
+	font-size:12px;
+	margin:2em 0 0;
+	padding:1em;
+}
+#wrapper {
+	padding-left: 2em;
+}
