@@ -13,6 +13,11 @@ import org.bootstrapjsp.tags.html.Div;
 import org.tldgen.annotations.Attribute;
 import org.tldgen.annotations.Tag;
 
+/**
+ * Provide contextual feedback messages for typical user actions with the 
+ * handful of available and flexible alert messages.
+ * <p>&lt;div class="alert"&gt;...&lt;/div&gt;</p>
+ */
 @Tag(dynamicAttributes=true)
 public class Alert extends Div {
 
