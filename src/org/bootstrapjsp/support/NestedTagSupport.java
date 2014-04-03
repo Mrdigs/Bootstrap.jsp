@@ -118,6 +118,7 @@ public abstract class NestedTagSupport extends SimpleTagSupport implements BaseT
 	protected void wrapIn(NestedTagSupport wrapper) throws JspException, IOException {
 		wrapper.appendChild(this);
 		wrapper.setJspContext(super.getJspContext());
+		wrapper.setJspBody(super.getJspBody());
 		wrapper.doTag();
 	}
 	
