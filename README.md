@@ -66,8 +66,6 @@ care of the markup for you:
 <b:button mold="ok" href="#"/>
 ```
 
-Still not convinced? Ok lets try a more complex example...
-
 Installation
 ------------
 
@@ -106,3 +104,11 @@ and point your browser at it:
 The kickstart tag outputs a basic HTML `head` and `body` tag to help you get up
 and running quickly. It is not really intended for production use, and you
 would probably want to write your own `head` anyway.
+
+Documentation
+-------------
+
+There are Javadoc API docs and TLD docs available in the docs folder.
+
+Full documentation on all the tags with examples is a work in progress and will
+be available shortly.
