@@ -63,6 +63,17 @@ If your container is < Servlet 3.0 compatible then you will need to add a
 servlet to your web.xml to allow the container to serve the bundled Bootstrap
 and supporting files from the JAR file:
 
+```xml
+<servlet>
+	<servlet-name>ResourceServlet</servlet-name>
+	<servlet-class>org.bootstrapjsp.util.ResourceServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>ResourceServlet</servlet-name>
+	<url-pattern>/bootstrapjsp/*</url-pattern>
+</servlet-mapping>
+```
+
 Getting Started
 ---------------
 
