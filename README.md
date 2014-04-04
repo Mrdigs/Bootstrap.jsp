@@ -16,10 +16,9 @@ What does it provide?
 ---------------------
 
 Bootstrap.jsp provides over 70 JSP tags, with a tag for almost every Bootstrap
-class, and attributes for controlling the tag output.
-
-Many of the tags have a number of available molds for creating a predefined
-component, and some have configurable molds so you can define your own.
+class, and attributes for controlling the tag output. Many of the tags have a 
+number of available molds for creating a predefined component, and some have 
+configurable molds so you can define your own.
 
 The Bootstrap.jsp distribution comes with Bootstrap 3.1.1 bundled, so you can 
 just install the jar file and away you go.
@@ -33,7 +32,7 @@ markup required for the same result:
 In HTML:
 
 ```html
-<button class="btn btn-primary">
+<button class="btn btn-success">
 	<span class="glyphicon glypicon-ok"></span> OK
 </button>
 ```
@@ -41,16 +40,33 @@ In HTML:
 In Bootstrap.jsp:
 
 ```xml
-<b:button context="primary" icon="ok" label="OK"/>
+<b:button context="success" icon="ok" label="OK"/>
 ```
 
-Not convinced? How about the following:
+Not convinced? Let's use one of the predefined molds for buttons:
 
 ```xml
 <b:button mold="ok"/>
 ```
 
-Still not convinced? Ok lets try a more complex scenario...
+Let's say you wanted to add an `href` to your button and have it work as an 
+anchor instead of a button. Without Bootstrap.jsp you'd have to rewrite
+your markup as:
+
+```html
+<a role="button" class="btn btn-success" href="#">
+	<span class="glyphicon glyphicon-ok"> </span> OK
+</a>
+```
+
+With Bootstrap.jsp, you can simply add an `href` attribute and it will take
+care of the markup for you:
+
+```xml
+<b:button mold="ok" href="#"/>
+```
+
+Still not convinced? Ok lets try a more complex example...
 
 Installation
 ------------
@@ -87,6 +103,6 @@ and point your browser at it:
 </b:kickstart>
 ```
 
-The kickstart tag outputs a basic HTML head and body tag to help you get up
+The kickstart tag outputs a basic HTML `head` and `body` tag to help you get up
 and running quickly. It is not really intended for production use, and you
-would probably want to write your own head anyway.
+would probably want to write your own `head` anyway.
