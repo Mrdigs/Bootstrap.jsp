@@ -69,10 +69,12 @@ Getting Started
 Once installation is complete, create a new JSP with the following contents,
 and point your browser at it:
 
+```xml
 <%@ taglib uri="http://bootstrapjsp.org/" prefix="b" %>
 <b:kickstart title="My First Page">
 	<b:button mold="ok"/>
 </b:kickstart>
+```
 
 The kickstart tag outputs a basic HTML head and body tag to help you get up
 and running quickly. It is not really intended for production use, and you
