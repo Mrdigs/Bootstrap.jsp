@@ -22,9 +22,11 @@ import org.tldgen.annotations.Tag;
 @Tag(name="carouselitem",dynamicAttributes=true)
 public class CarouselItem extends Div {
 
+	@SuppressWarnings("unchecked")
 	public CarouselItem() {
 		super("item");
 		super.addFacet(new ActiveFacet(false));
+		super.setValidParents(Carousel.class);
 	}
 
 	/**
@@ -41,8 +43,6 @@ public class CarouselItem extends Div {
 		if (parent != null) {
 			if (parent instanceof Carousel) {
 				((Carousel) parent).addItem(this);
-			} else {
-				throw new IllegalArgumentException("Illegal parent");
 			}
 		}
 		super.setParent(parent);
