@@ -9,9 +9,7 @@ package org.bootstrapjsp.tags.ext;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.Reader;
 import java.io.StringWriter;
-import java.io.Writer;
 
 import javax.servlet.ServletContext;
 import javax.servlet.jsp.JspException;
@@ -19,6 +17,7 @@ import javax.servlet.jsp.JspWriter;
 import javax.servlet.jsp.PageContext;
 import javax.servlet.jsp.tagext.SimpleTagSupport;
 
+import org.bootstrapjsp.util.StreamUtil;
 import org.tldgen.annotations.Attribute;
 import org.tldgen.annotations.Tag;
 
@@ -39,7 +38,7 @@ public class Kickstart extends SimpleTagSupport {
 		final ClassLoader cl = this.getClass().getClassLoader();
 		InputStream in = cl.getResourceAsStream(PREFIX + "header.html");
 		InputStreamReader reader = new InputStreamReader(in);
-		this.write(reader, swriter);
+		StreamUtil.copy(reader, swriter);
 		writer.print(String.format(swriter.toString(), this.title, contextPath));
 		if (this.getJspBody() != null) {
 			this.getJspBody().invoke(null);
@@ -47,7 +46,7 @@ public class Kickstart extends SimpleTagSupport {
 		in = cl.getResourceAsStream(PREFIX + "footer.html");
 		reader = new InputStreamReader(in);
 		swriter.getBuffer().setLength(0);
-		this.write(reader, swriter);
+		StreamUtil.copy(reader, swriter);
 		writer.print(String.format(swriter.toString(), contextPath));
 	}
 
@@ -56,15 +55,4 @@ public class Kickstart extends SimpleTagSupport {
 		this.title = title;
 	}
 	
-	private void write(Reader reader, Writer writer) throws JspException {
-		int len;
-		char[] buffer = new char[1024];
-		try {
-			while ((len = reader.read(buffer)) != -1) {
-				writer.write(buffer, 0, len);
-			}
-		} catch (IOException e) {
-			throw new JspException(e);
-		}
-	}
 }
