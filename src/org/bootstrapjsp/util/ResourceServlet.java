@@ -1,9 +1,11 @@
 package org.bootstrapjsp.util;
 
 import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.Enumeration;
+import java.util.zip.GZIPOutputStream;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -16,9 +18,6 @@ import javax.servlet.http.HttpServletResponse;
 public class ResourceServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
-	
-	// Note that I *could* use a filter and modify the getRealPath
-	// instead which would be better, if it works.
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -34,15 +33,35 @@ public class ResourceServlet extends HttpServlet {
 			if (modifiedSince < 1 || lastModified > modifiedSince) {
 				final String fileName = url.getFile().substring(url.getFile().lastIndexOf('/') + 1);
 				final String contentType = req.getServletContext().getMimeType(fileName);
-				if (contentType != null) resp.setContentType(contentType);
 				if (lastModified > 0) resp.setDateHeader("Last-Modified", lastModified);
-				StreamUtil.copy(new InputStreamReader(conn.getInputStream()), resp.getWriter());
+				if (contentType != null) resp.setContentType(contentType);
+				OutputStream out = null;
+				if (this.supportsGzip(req)) {
+					out = new GZIPOutputStream(resp.getOutputStream());
+					resp.addHeader("Content-Encoding", "gzip");
+					resp.addHeader("Vary", "Accept-Encoding");
+				} else {
+					out = resp.getOutputStream();
+				}
+				StreamUtil.copy(conn.getInputStream(), out);
 				resp.setStatus(200);
+				out.close();
 			} else {
 				resp.setStatus(304);
 			}
 		} else {
 			resp.setStatus(404);
 		}
+	}
+	
+	private boolean supportsGzip(HttpServletRequest req) {
+        Enumeration<String> e = req.getHeaders("Accept-Encoding");
+        while (e.hasMoreElements()) {
+            String name = (String) e.nextElement();
+            if (name.matches("(?i).*gzip.*")) {
+            	return true;
+            }
+        }
+        return false;
 	}
 }
