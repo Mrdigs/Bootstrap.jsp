@@ -7,7 +7,7 @@
 package org.bootstrapjsp.tags.core.modal;
 
 import org.bootstrapjsp.dialect.Html;
-import org.bootstrapjsp.facet.ContextFacet;
+import org.bootstrapjsp.facet.IconFacet;
 import org.bootstrapjsp.facet.LabelFacet;
 import org.bootstrapjsp.facet.Labelable;
 import org.bootstrapjsp.facet.MoldFacet;
@@ -15,8 +15,8 @@ import org.bootstrapjsp.facet.Moldable;
 import org.bootstrapjsp.facet.SizeFacet;
 import org.bootstrapjsp.facet.Sizeable;
 import org.bootstrapjsp.tags.core.misc.Button;
-import org.bootstrapjsp.tags.core.misc.Glyphicon;
 import org.bootstrapjsp.tags.html.Div;
+import org.bootstrapjsp.util.Config;
 import org.tldgen.annotations.Attribute;
 import org.tldgen.annotations.BodyContent;
 import org.tldgen.annotations.Tag;
@@ -35,9 +35,9 @@ public class ModalDialog extends Modal implements Labelable, Sizeable, Moldable 
 	public ModalDialog() {
 		super();
 		super.setAttribute(Html.ROLE_ATTRIBUTE, "dialog");
+		super.addFacet(new MoldFacet());
 		super.addFacet(new LabelFacet());
 		super.addFacet(new SizeFacet("modal", null, "lg", "sm"));
-		super.addFacet(new MoldFacet("edit", "confirm", "query"));
 		modalDialog.setAttribute(Html.CLASS_ATTRIBUTE, "modal-dialog");
 		modalDialog.appendChild(modalContent);
 		super.appendChild(modalDialog);
@@ -45,45 +45,32 @@ public class ModalDialog extends Modal implements Labelable, Sizeable, Moldable 
 
 	@Override
 	public void applyMold(String mold) {
-		final Button okButton = new Button();
-		final Button cancelButton = new Button();
-		final ModalFooter modalFooter = new ModalFooter();
-		final LabelFacet okLabel = okButton.getFacet(LabelFacet.class);
-		final LabelFacet cancelLabel = cancelButton.getFacet(LabelFacet.class);
-		cancelButton.getFacet(ContextFacet.class).setValue("default");
-		okButton.getFacet(ContextFacet.class).setValue("primary");
-		okButton.setAttribute("data-forward", "click=ok.bsjsp.modal");
-		cancelButton.setAttribute("data-forward", "click=cancel.bsjsp.modal");
-		cancelButton.setDismiss("modal");
-		okButton.setDismiss("modal");
-
-		Glyphicon icon = null;
-		if ("edit".equals(mold)) {
-			okLabel.setValue("Save changes");
-			cancelLabel.setValue("Close");
-			icon = new Glyphicon("pencil");
-		} else if ("confirm".equals(mold)) {
-			okLabel.setValue("OK");
-			cancelLabel.setValue("Cancel");
-			icon = new Glyphicon("exclamation-sign");
-		} else if ("query".equals(mold)) {
-			okLabel.setValue("Yes");
-			cancelLabel.setValue("No");
-			icon = new Glyphicon("question-sign");
+		final String icon = this.getMoldProperty(mold, "icon");
+		final String buttons = this.getMoldProperty(mold, "buttons");
+		if (buttons != null || icon != null) {
+			if (buttons != null) {
+				final ModalFooter modalFooter = new ModalFooter();
+				for (String each : buttons.split(",")) {
+					final Button button = new Button();
+					button.setAttribute("data-forward", "click=" + each + ".bsjsp.modal");
+					button.getFacet(MoldFacet.class).setValue(each);
+					modalFooter.appendChild(button, AFTER_BODY);
+					button.setDismiss("modal");
+				}
+				this.modalContent.appendChild(modalFooter, AFTER_BODY);
+			}
+			if (icon != null) {
+				final ModalTitle modalTitle = modalHeader.getModalTitle();
+				modalTitle.getFacet(IconFacet.class).setValue(icon);
+			}
+			this.dismissable = false;
 			this.setBackdrop("static");
 			this.setKeyboard(false);
+		} else {
+			throw new IllegalArgumentException("Mold not found for modaldialog: " + mold);
 		}
-		if (icon != null) {
-			final ModalTitle modalTitle = modalHeader.getModalTitle();
-			modalTitle.appendChild(icon, BEFORE_BODY);
-		}
-		
-		this.dismissable = false;
-		modalFooter.appendChild(okButton, AFTER_BODY);
-		modalFooter.appendChild(cancelButton, BEFORE_BODY);
-		modalContent.appendChild(modalFooter, AFTER_BODY);
 	}
-	
+
 	@Override
 	public void applyLabel(String label) {
 		modalContent.appendChild(modalHeader, BEFORE_BODY);
@@ -102,6 +89,12 @@ public class ModalDialog extends Modal implements Labelable, Sizeable, Moldable 
 	
 	public boolean isDismissable() {
 		return this.dismissable;
+	}
+
+	private String getMoldProperty(String mold, String property) {
+		final String key = String.format("modaldialog.mold.%s.%s", mold, property);
+		return Config.getProperty(key);
+		
 	}
 
 }
