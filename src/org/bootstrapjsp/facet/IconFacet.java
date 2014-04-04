@@ -7,6 +7,7 @@
 package org.bootstrapjsp.facet;
 
 import org.bootstrapjsp.support.NestedTagSupport;
+import org.bootstrapjsp.tags.Text;
 import org.bootstrapjsp.tags.core.misc.Button;
 import org.bootstrapjsp.tags.core.misc.Glyphicon;
 import org.bootstrapjsp.util.Config;
@@ -22,6 +23,7 @@ public class IconFacet extends Facet<NestedTagSupport, String> {
 		if (!(tag instanceof Button) || Config.useButtonIcons()) {
 			final Glyphicon icon = new Glyphicon(super.getValue());
 			tag.appendChild(icon, NestedTagSupport.BEFORE_BODY);
+			tag.appendChild(new Text(" "), NestedTagSupport.BEFORE_BODY);
 		}
 	}
 
