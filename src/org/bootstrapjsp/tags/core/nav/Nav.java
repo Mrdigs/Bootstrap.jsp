@@ -26,8 +26,8 @@ public class Nav extends List implements Moldable, Alignable {
 
 	public Nav() {
 		super(false, "nav");
+		super.getFacet(MoldFacet.class).setValidValues("tabs", "pills");
 		super.addFacet(new JustifiedFacet("nav", false));
-		super.addFacet(new MoldFacet("tabs", "pills"));
 		super.addFacet(new AlignFacet(null));
 	}
 

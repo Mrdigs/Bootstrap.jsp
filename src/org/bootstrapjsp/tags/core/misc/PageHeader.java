@@ -11,10 +11,9 @@ import org.bootstrapjsp.facet.Labelable;
 import org.bootstrapjsp.tags.html.Div;
 import org.bootstrapjsp.tags.html.Heading;
 import org.tldgen.annotations.Attribute;
-import org.tldgen.annotations.BodyContent;
 import org.tldgen.annotations.Tag;
 
-@Tag(name="pageheader",bodyContent=BodyContent.SCRIPTLESS,dynamicAttributes=true)
+@Tag(name="pageheader",dynamicAttributes=true)
 public class PageHeader extends Div implements Labelable {
 
 	final Heading heading = new Heading();

@@ -14,10 +14,9 @@ import org.bootstrapjsp.dialect.Html;
 import org.bootstrapjsp.facet.JustifiedFacet;
 import org.bootstrapjsp.facet.SizeFacet;
 import org.bootstrapjsp.tags.html.Div;
-import org.tldgen.annotations.BodyContent;
 import org.tldgen.annotations.Tag;
 
-@Tag(name="buttongroup",bodyContent=BodyContent.SCRIPTLESS,dynamicAttributes=true)
+@Tag(name="buttongroup",dynamicAttributes=true)
 public class ButtonGroup extends Div {
 
 	private boolean vertical = false;

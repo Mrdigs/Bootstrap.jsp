@@ -7,10 +7,9 @@
 package org.bootstrapjsp.tags.core.nav;
 
 import org.bootstrapjsp.tags.html.Div;
-import org.tldgen.annotations.BodyContent;
 import org.tldgen.annotations.Tag;
 
-@Tag(name="navbarheader",bodyContent=BodyContent.SCRIPTLESS,dynamicAttributes=true)
+@Tag(name="navbarheader",dynamicAttributes=true)
 public class NavbarHeader extends Div {
 	
 	public NavbarHeader() {

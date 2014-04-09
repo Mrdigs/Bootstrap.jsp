@@ -11,10 +11,9 @@ import javax.servlet.jsp.tagext.JspTag;
 import org.bootstrapjsp.dialect.Html;
 import org.bootstrapjsp.facet.AlignFacet;
 import org.bootstrapjsp.tags.core.misc.Button;
-import org.tldgen.annotations.BodyContent;
 import org.tldgen.annotations.Tag;
 
-@Tag(name="navbarbutton",bodyContent=BodyContent.SCRIPTLESS,dynamicAttributes=true)
+@Tag(name="navbarbutton",dynamicAttributes=true)
 public class NavbarButton extends Button {
 	
 	public NavbarButton() {

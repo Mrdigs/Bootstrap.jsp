@@ -7,10 +7,9 @@
 package org.bootstrapjsp.tags.core.form;
 
 import org.bootstrapjsp.tags.html.Div;
-import org.tldgen.annotations.BodyContent;
 import org.tldgen.annotations.Tag;
 
-@Tag(name="formgroup",bodyContent=BodyContent.SCRIPTLESS,dynamicAttributes=true)
+@Tag(name="formgroup",dynamicAttributes=true)
 public class FormGroup extends Div {
 
 	public FormGroup() {

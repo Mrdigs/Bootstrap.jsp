@@ -7,7 +7,7 @@
 package org.bootstrapjsp.facet;
 
 import org.bootstrapjsp.support.NestedTagSupport;
-import org.bootstrapjsp.tags.Text;
+import org.bootstrapjsp.tags.ext.Message;
 
 public class LabelFacet extends Facet<NestedTagSupport, String> {
 
@@ -20,8 +20,8 @@ public class LabelFacet extends Facet<NestedTagSupport, String> {
 		if (tag instanceof Labelable) {
 			((Labelable) tag).applyLabel(super.getValue());
 		} else {
-			final Text textTag = new Text(super.getValue());
-			tag.appendChild(textTag, NestedTagSupport.BEFORE_BODY);
+			final Message message = new Message(super.getValue());
+			tag.appendChild(message, NestedTagSupport.BEFORE_BODY);
 		}
 	}
 

@@ -15,14 +15,13 @@ import org.bootstrapjsp.facet.ActiveFacet;
 import org.bootstrapjsp.facet.DisabledFacet;
 import org.bootstrapjsp.facet.LabelFacet;
 import org.bootstrapjsp.facet.Labelable;
-import org.bootstrapjsp.tags.Text;
+import org.bootstrapjsp.tags.ext.Message;
 import org.bootstrapjsp.tags.html.Anchor;
 import org.bootstrapjsp.tags.html.ListItem;
 import org.tldgen.annotations.Attribute;
-import org.tldgen.annotations.BodyContent;
 import org.tldgen.annotations.Tag;
 
-@Tag(name="pageitem",bodyContent=BodyContent.SCRIPTLESS,dynamicAttributes=true)
+@Tag(name="pageitem",dynamicAttributes=true)
 public class PageItem extends ListItem implements Labelable {
 
 	private boolean next = false;
@@ -68,6 +67,6 @@ public class PageItem extends ListItem implements Labelable {
 
 	@Override
 	public void applyLabel(String label) {
-		this.anchor.appendChild(new Text(label));
+		this.anchor.appendChild(new Message(label));
 	}
 }

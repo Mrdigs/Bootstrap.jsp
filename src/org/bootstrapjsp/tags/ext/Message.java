@@ -1,10 +1,4 @@
-/*
- * Copyright (c) 2014 Darren Scott - All Rights Reserved
- * 
- * This program is distributed under LGPL Version 2.1 in the hope that
- * it will be useful, but WITHOUT ANY WARRANTY.
- */
-package org.bootstrapjsp.tags;
+package org.bootstrapjsp.tags.ext;
 
 import java.io.IOException;
 import java.util.Locale;
@@ -13,24 +7,34 @@ import java.util.ResourceBundle;
 
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.PageContext;
-import javax.servlet.jsp.tagext.SimpleTagSupport;
 
-import org.bootstrapjsp.support.BaseTag;
+import org.bootstrapjsp.tags.TextNode;
+import org.tldgen.annotations.Attribute;
+import org.tldgen.annotations.Tag;
 
-public class Text extends SimpleTagSupport implements BaseTag {
+@Tag
+public class Message extends TextNode {
 
 	private final static String LABELS = "BootstrapLabels";
 	
-	private String value;
-	
-	public Text(String value) {
-		this.value = value;
+	public Message() {
+		this(null);
+	}
+
+	public Message(String value) {
+		super(value);
+	}
+
+	@Attribute(rtexprvalue=true)
+	public void setValue(String value) {
+		super.setValue(value);
 	}
 	
 	@Override
 	public void doTag() throws JspException, IOException {
+		final String value = super.getValue();
 		final PageContext pageContext = (PageContext) super.getJspContext();
-		final String key = this.value.trim().replace(' ', '_').toLowerCase();
+		final String key = value.trim().replace(' ', '_').toLowerCase();
 		if (key.length() > 0) {
 			final Locale locale = pageContext.getRequest().getLocale();
 			try {
@@ -44,7 +48,7 @@ public class Text extends SimpleTagSupport implements BaseTag {
 				// Continue to use the text specified
 			}
 		}
-		pageContext.getOut().print(this.value);
-	}
-	
+		super.doTag();
+	}	
+
 }

@@ -9,10 +9,9 @@ package org.bootstrapjsp.tags.core.nav;
 import org.bootstrapjsp.dialect.Html;
 import org.bootstrapjsp.facet.AlignFacet;
 import org.bootstrapjsp.tags.Component;
-import org.tldgen.annotations.BodyContent;
 import org.tldgen.annotations.Tag;
 
-@Tag(name="navbarform",bodyContent=BodyContent.SCRIPTLESS,dynamicAttributes=true)
+@Tag(name="navbarform",dynamicAttributes=true)
 public class NavbarForm extends Component {
 
 	public NavbarForm() {

@@ -7,10 +7,9 @@
 package org.bootstrapjsp.tags.core.modal;
 
 import org.bootstrapjsp.tags.html.Div;
-import org.tldgen.annotations.BodyContent;
 import org.tldgen.annotations.Tag;
 
-@Tag(name="modalfooter",bodyContent=BodyContent.SCRIPTLESS,dynamicAttributes=true)
+@Tag(name="modalfooter",dynamicAttributes=true)
 public class ModalFooter extends Div {
 
 	public ModalFooter() {

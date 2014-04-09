@@ -8,7 +8,6 @@ package org.bootstrapjsp.tags.core.inputgroup;
 
 import org.bootstrapjsp.facet.LabelFacet;
 import org.bootstrapjsp.tags.html.Span;
-import org.tldgen.annotations.BodyContent;
 import org.tldgen.annotations.Tag;
 
 /**
@@ -17,7 +16,7 @@ import org.tldgen.annotations.Tag;
  * &lt;span class="input-group-addon"&gt;...&lt;/span&gt;
  * </p>
  */
-@Tag(name="inputgroupaddon", bodyContent=BodyContent.SCRIPTLESS, dynamicAttributes=true)
+@Tag(name="inputgroupaddon",  dynamicAttributes=true)
 public class InputGroupAddon extends Span {
 
 	public InputGroupAddon() {

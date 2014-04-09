@@ -8,7 +8,6 @@ package org.bootstrapjsp.tags.core.inputgroup;
 
 import org.bootstrapjsp.facet.SizeFacet;
 import org.bootstrapjsp.tags.html.Div;
-import org.tldgen.annotations.BodyContent;
 import org.tldgen.annotations.Tag;
 
 /**
@@ -17,7 +16,7 @@ import org.tldgen.annotations.Tag;
  * &lt;div class="input-group"&gt;...&lt;/div&gt;
  * </p>
  */
-@Tag(name="inputgroup", bodyContent=BodyContent.SCRIPTLESS, dynamicAttributes=true)
+@Tag(name="inputgroup",  dynamicAttributes=true)
 public class InputGroup extends Div {
 
 	public InputGroup() {

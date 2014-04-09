@@ -8,10 +8,9 @@ package org.bootstrapjsp.tags.core.misc;
 
 import org.bootstrapjsp.dialect.Html;
 import org.bootstrapjsp.tags.html.Div;
-import org.tldgen.annotations.BodyContent;
 import org.tldgen.annotations.Tag;
 
-@Tag(name="buttontoolbar",bodyContent=BodyContent.SCRIPTLESS,dynamicAttributes=true)
+@Tag(name="buttontoolbar",dynamicAttributes=true)
 public class ButtonToolbar extends Div {
 
 	public ButtonToolbar() {

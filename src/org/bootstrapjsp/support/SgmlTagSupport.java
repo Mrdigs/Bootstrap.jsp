@@ -62,7 +62,13 @@ public class SgmlTagSupport extends NestedTagSupport implements DynamicAttribute
 	
 	@Override
 	public void setDynamicAttribute(String uri, String localName, Object value) throws JspException {
-		if (value != null) {
+		if ("attributes".equals(localName) && value instanceof Map) {
+			@SuppressWarnings("unchecked")
+			Map<String, Object> attributes = (Map<String, Object>) value;
+			for (Entry<String, Object> attribute : attributes.entrySet()) {
+				this.setAttribute(attribute.getKey(), attribute.getValue());
+			}
+		} else if (value != null) {
 			this.setAttribute(localName, value);
 		}
 	}

@@ -7,7 +7,7 @@
 package org.bootstrapjsp.tags.core.misc;
 
 import org.bootstrapjsp.dialect.Html;
-import org.bootstrapjsp.tags.Text;
+import org.bootstrapjsp.tags.TextNode;
 import org.bootstrapjsp.tags.html.Span;
 import org.tldgen.annotations.Attribute;
 import org.tldgen.annotations.BodyContent;
@@ -28,7 +28,7 @@ public class Glyphicon extends Span {
 
 	public Glyphicon(String type) {
 		super("glyphicon");
-		super.appendChild(new Text(" "), BEFORE_BODY);
+		super.appendChild(new TextNode(" "), BEFORE_BODY);
 		if (type != null) this.setType(type);
 	}
 	

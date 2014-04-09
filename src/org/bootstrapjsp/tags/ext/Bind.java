@@ -11,7 +11,7 @@ import org.tldgen.annotations.BodyContent;
 import org.tldgen.annotations.Tag;
 import org.tldgen.annotations.Variable;
 
-@Tag(bodyContent=BodyContent.JSP)
+@Tag(bodyContent=BodyContent.SCRIPTLESS)
 public class Bind extends SimpleTagSupport {
 
 	@Variable

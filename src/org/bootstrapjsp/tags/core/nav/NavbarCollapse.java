@@ -7,10 +7,9 @@
 package org.bootstrapjsp.tags.core.nav;
 
 import org.bootstrapjsp.tags.html.Div;
-import org.tldgen.annotations.BodyContent;
 import org.tldgen.annotations.Tag;
 
-@Tag(name="navbarcollapse",bodyContent=BodyContent.SCRIPTLESS,dynamicAttributes=true)
+@Tag(name="navbarcollapse",dynamicAttributes=true)
 public class NavbarCollapse extends Div {
 	
 	public NavbarCollapse() {

@@ -8,10 +8,9 @@ package org.bootstrapjsp.tags.core.panel;
 
 import org.bootstrapjsp.facet.LabelFacet;
 import org.bootstrapjsp.tags.html.Heading;
-import org.tldgen.annotations.BodyContent;
 import org.tldgen.annotations.Tag;
 
-@Tag(name="paneltitle",bodyContent=BodyContent.SCRIPTLESS,dynamicAttributes=true)
+@Tag(name="paneltitle",dynamicAttributes=true)
 public class PanelTitle extends Heading {
 
 	public PanelTitle() {

@@ -10,7 +10,7 @@ import org.bootstrapjsp.dialect.Html;
 import org.bootstrapjsp.facet.DisabledFacet;
 import org.bootstrapjsp.facet.LabelFacet;
 import org.bootstrapjsp.facet.Labelable;
-import org.bootstrapjsp.tags.Text;
+import org.bootstrapjsp.tags.ext.Message;
 import org.bootstrapjsp.tags.html.Anchor;
 import org.bootstrapjsp.tags.html.ListItem;
 import org.tldgen.annotations.Attribute;
@@ -20,7 +20,7 @@ import org.tldgen.annotations.Tag;
  * A Menu Item. Menu Items always contain anchors. The body of the tag will
  * be the body of the anchor.
  * <p>
- * &lt;li role="presentation"&gt;&lta role="menuitem"&gt;...&lt;/a&gt&lt;/li&gt;
+ * &lt;li role="presentation"&gt;&lt;a role="menuitem"&gt;...&lt;/a&gt;&lt;/li&gt;
  * </p>
  */
 @Tag(name="menuitem", dynamicAttributes=true)
@@ -48,7 +48,7 @@ public class MenuItem extends ListItem implements Labelable {
 
 	@Override
 	public void applyLabel(String label) {
-		this.anchor.appendChild(new Text(label));
+		this.anchor.appendChild(new Message(label));
 	}
 
 }

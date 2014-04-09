@@ -6,6 +6,7 @@
  */
 package org.bootstrapjsp.facet;
 
+import java.util.Arrays;
 import java.util.List;
 
 import org.bootstrapjsp.support.BaseTag;
@@ -20,13 +21,28 @@ public abstract class Facet<T extends BaseTag, V> {
 
 	private V value;
 
+	private T tag;
+	
 	public Facet(String name, V dflt) {
 		this.name = name;
 		this.dflt = dflt;
 	}
 
-	protected final void setValidValues(List<V> validValues) {
+	public final void setValidValues(V... valid) {
+		this.validValues = Arrays.asList(valid);
+	}
+
+	public final void setValidValues(List<V> validValues) {
 		this.validValues = validValues;
+	}
+
+	@SuppressWarnings("unchecked")
+	public void setTag(BaseTag tag) {
+		this.tag = (T) tag;
+	}
+	
+	protected T getTag() {
+		return tag;
 	}
 
 	private boolean isValid(V value) {
@@ -76,15 +92,5 @@ public abstract class Facet<T extends BaseTag, V> {
 	public abstract void apply(T tag);
 	
 	public abstract V convert(String value);
-
-	/*
-	@SuppressWarnings("unchecked")
-	public void setTag(BaseTag tag) {
-		this.tag = (T) tag;
-	}
 	
-	public T getTag() {
-		return tag;
-	}
-	*/
 }

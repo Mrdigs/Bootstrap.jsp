@@ -11,15 +11,10 @@ import org.bootstrapjsp.facet.ContextFacet;
 import org.bootstrapjsp.facet.ForwardFacet;
 import org.bootstrapjsp.facet.IconFacet;
 import org.bootstrapjsp.facet.LabelFacet;
-import org.bootstrapjsp.facet.MoldFacet;
-import org.bootstrapjsp.facet.Moldable;
 import org.bootstrapjsp.facet.SizeFacet;
 import org.bootstrapjsp.facet.Toggleable;
 import org.bootstrapjsp.tags.Component;
-import org.bootstrapjsp.tags.Text;
-import org.bootstrapjsp.util.Config;
 import org.tldgen.annotations.Attribute;
-import org.tldgen.annotations.BodyContent;
 import org.tldgen.annotations.Tag;
 
 /**
@@ -28,14 +23,13 @@ import org.tldgen.annotations.Tag;
  * @author darrenscott
  *
  */
-@Tag(bodyContent=BodyContent.SCRIPTLESS,dynamicAttributes=true)
-public class Button extends Component implements Moldable, Toggleable {
+@Tag(dynamicAttributes=true)
+public class Button extends Component implements Toggleable {
 
 	public Button() { 
 		super(Html.BUTTON_ELEMENT);
 		super.setAttribute(Html.CLASS_ATTRIBUTE, "btn");
 		super.addFacet(new ForwardFacet());
-		super.addFacet(new MoldFacet());
 		super.addFacet(new SizeFacet("btn", null));
 		super.addFacet(new ContextFacet("btn", "default"));
 		super.addFacet(new IconFacet());
@@ -88,33 +82,4 @@ public class Button extends Component implements Moldable, Toggleable {
 		}
 	}
 
-	@Override
-	public void applyMold(String mold) {
-		if ("close".equals(mold)) {
-			this.appendChild(new Text("&times;"));
-			super.setAttribute(Html.CLASS_ATTRIBUTE, "close");
-			super.setAttribute("aria-hidden", "true");
-		} else if ("dropdown".equals(mold)) {
-			this.applyToggle("dropdown");
-			this.appendChild(new Text(" "), AFTER_BODY);
-			this.appendChild(new Caret(), AFTER_BODY);
-		} else {
-			final String icon = this.getMoldProperty(mold, "icon");
-			final String label = this.getMoldProperty(mold, "label");
-			final String context = this.getMoldProperty(mold, "context");
-			if (icon != null || label != null || context != null) {
-				this.getFacet(IconFacet.class).setValue(icon, false);
-				this.getFacet(LabelFacet.class).setValue(label, false);
-				this.getFacet(ContextFacet.class).setValue(context, false);
-			} else {
-				throw new IllegalArgumentException("Mold not found for button: " + mold);
-			}
-		}
-	}
-
-	private String getMoldProperty(String mold, String property) {
-		final String key = String.format("button.mold.%s.%s", mold, property);
-		return Config.getProperty(key);
-		
-	}
 }

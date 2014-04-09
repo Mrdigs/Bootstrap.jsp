@@ -7,9 +7,10 @@
 package org.bootstrapjsp.tags.core.carousel;
 
 import org.bootstrapjsp.tags.html.Div;
+import org.tldgen.annotations.BodyContent;
 import org.tldgen.annotations.Tag;
 
-@Tag(name="carouselinner",dynamicAttributes=true)
+@Tag(bodyContent=BodyContent.SCRIPTLESS,name="carouselinner",dynamicAttributes=true)
 public class CarouselInner extends Div {
 
 	public CarouselInner() {

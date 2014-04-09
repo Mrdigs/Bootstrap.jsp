@@ -7,10 +7,9 @@
 package org.bootstrapjsp.tags.core.misc;
 
 import org.bootstrapjsp.tags.html.Div;
-import org.tldgen.annotations.BodyContent;
 import org.tldgen.annotations.Tag;
 
-@Tag(name="tabcontent",bodyContent=BodyContent.SCRIPTLESS,dynamicAttributes=true)
+@Tag(name="tabcontent",dynamicAttributes=true)
 public class TabContent extends Div {
 
 	public TabContent() {

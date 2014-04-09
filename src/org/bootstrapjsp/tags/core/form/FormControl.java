@@ -9,10 +9,9 @@ package org.bootstrapjsp.tags.core.form;
 import org.bootstrapjsp.dialect.Html;
 import org.bootstrapjsp.tags.Component;
 import org.tldgen.annotations.Attribute;
-import org.tldgen.annotations.BodyContent;
 import org.tldgen.annotations.Tag;
 
-@Tag(name="formcontrol",bodyContent=BodyContent.SCRIPTLESS,dynamicAttributes=true)
+@Tag(name="formcontrol",dynamicAttributes=true)
 public class FormControl extends Component {
 
 	public FormControl() {

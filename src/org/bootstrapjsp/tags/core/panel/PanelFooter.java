@@ -7,10 +7,9 @@
 package org.bootstrapjsp.tags.core.panel;
 
 import org.bootstrapjsp.tags.html.Div;
-import org.tldgen.annotations.BodyContent;
 import org.tldgen.annotations.Tag;
 
-@Tag(name="panelfooter",bodyContent=BodyContent.SCRIPTLESS,dynamicAttributes=true)
+@Tag(name="panelfooter",dynamicAttributes=true)
 public class PanelFooter extends Div {
 
 	public PanelFooter() {

@@ -7,10 +7,9 @@
 package org.bootstrapjsp.tags.core.inputgroup;
 
 import org.bootstrapjsp.tags.html.Div;
-import org.tldgen.annotations.BodyContent;
 import org.tldgen.annotations.Tag;
 
-@Tag(name="inputgroupbutton", bodyContent=BodyContent.SCRIPTLESS, dynamicAttributes=true)
+@Tag(name="inputgroupbutton",  dynamicAttributes=true)
 public class InputGroupButton extends Div {
 
 	public InputGroupButton() {

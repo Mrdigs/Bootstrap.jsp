@@ -7,7 +7,6 @@
 package org.bootstrapjsp.tags.core.listgroup;
 
 import org.bootstrapjsp.tags.html.List;
-import org.tldgen.annotations.BodyContent;
 import org.tldgen.annotations.Tag;
 
 /**
@@ -18,7 +17,7 @@ import org.tldgen.annotations.Tag;
  * &lt;ul class="list-group"&gt;...&lt;/ul&gt;
  * </p>
  */
-@Tag(name="listgroup", bodyContent=BodyContent.SCRIPTLESS, dynamicAttributes=true)
+@Tag(name="listgroup", dynamicAttributes=true)
 public class ListGroup extends List {
 
 	public ListGroup() {

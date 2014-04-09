@@ -12,13 +12,12 @@ import javax.servlet.jsp.JspException;
 
 import org.bootstrapjsp.facet.LabelFacet;
 import org.bootstrapjsp.facet.Labelable;
-import org.bootstrapjsp.tags.Text;
 import org.bootstrapjsp.tags.core.misc.Button;
+import org.bootstrapjsp.tags.ext.Message;
 import org.bootstrapjsp.tags.html.Div;
-import org.tldgen.annotations.BodyContent;
 import org.tldgen.annotations.Tag;
 
-@Tag(name="modalheader",bodyContent=BodyContent.SCRIPTLESS,dynamicAttributes=true)
+@Tag(name="modalheader",dynamicAttributes=true)
 public class ModalHeader extends Div implements Labelable {
 
 	private final ModalTitle modalTitle = new ModalTitle();
@@ -35,14 +34,14 @@ public class ModalHeader extends Div implements Labelable {
 			final Button button = new Button();
 			super.appendChild(button, BEFORE_BODY);
 			button.setDismiss("modal");
-			button.applyMold("close");
+			button.setAttribute("mold", "close");
 		}
 		super.doTag();
 	}
 	
 	@Override
 	public void applyLabel(String label) {
-		modalTitle.appendChild(new Text(label));
+		modalTitle.appendChild(new Message(label));
 		super.appendChild(modalTitle);
 	}
 	

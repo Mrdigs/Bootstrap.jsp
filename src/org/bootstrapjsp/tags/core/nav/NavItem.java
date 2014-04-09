@@ -12,10 +12,9 @@ import org.bootstrapjsp.facet.LabelFacet;
 import org.bootstrapjsp.tags.html.Anchor;
 import org.bootstrapjsp.tags.html.ListItem;
 import org.tldgen.annotations.Attribute;
-import org.tldgen.annotations.BodyContent;
 import org.tldgen.annotations.Tag;
 
-@Tag(name="navitem",bodyContent=BodyContent.SCRIPTLESS,dynamicAttributes=true)
+@Tag(name="navitem",dynamicAttributes=true)
 public class NavItem extends ListItem {
 
 	public NavItem() {

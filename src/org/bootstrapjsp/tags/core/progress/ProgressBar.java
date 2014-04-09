@@ -12,14 +12,13 @@ import javax.servlet.jsp.JspException;
 
 import org.bootstrapjsp.dialect.Html;
 import org.bootstrapjsp.facet.ContextFacet;
-import org.bootstrapjsp.tags.Text;
+import org.bootstrapjsp.tags.ext.Message;
 import org.bootstrapjsp.tags.html.Div;
 import org.bootstrapjsp.tags.html.Span;
 import org.tldgen.annotations.Attribute;
-import org.tldgen.annotations.BodyContent;
 import org.tldgen.annotations.Tag;
 
-@Tag(name="progressbar",bodyContent=BodyContent.SCRIPTLESS,dynamicAttributes=true)
+@Tag(name="progressbar",dynamicAttributes=true)
 public class ProgressBar extends Div {
 
 	private String label;
@@ -38,7 +37,7 @@ public class ProgressBar extends Div {
 			span.setAttribute(Html.CLASS_ATTRIBUTE, "sr-only");
 			super.appendChild(span);
 		} else {
-			super.appendChild(new Text(this.label), BEFORE_BODY);
+			super.appendChild(new Message(this.label), BEFORE_BODY);
 		}
 		super.doTag();
 	}

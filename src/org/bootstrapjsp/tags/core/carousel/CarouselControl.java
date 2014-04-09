@@ -26,7 +26,7 @@ public class CarouselControl extends Anchor implements Moldable {
 
 	public CarouselControl() {
 		super("carousel-control");
-		super.addFacet(new MoldFacet("prev", "next"));
+		super.getFacet(MoldFacet.class).setValidValues("prev", "next");
 	}
 
 	@Override
