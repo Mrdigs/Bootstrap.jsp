@@ -16,4 +16,20 @@ $(document).on('ready', function() {
 			});
 		});
 	});
+
 });
+
+// TODO Need to amalgamate these functions
+$(document).bind('DOMNodeInserted', function(e) {
+	var forwarded = $(e.target).find('[data-forward]');
+	$.each(forwarded, function() {
+		var element = $(this), forwards = element.attr('data-forward');
+		$.each(forwards.split(','), function() {
+			var forward = this.split('=');
+			element.on(forward[0], function() {
+				element.trigger(forward[1]);
+			});
+		});
+	});
+});
+
