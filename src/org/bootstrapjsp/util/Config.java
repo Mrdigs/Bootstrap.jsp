@@ -6,7 +6,9 @@
  */
 package org.bootstrapjsp.util;
 
+import java.util.HashMap;
 import java.util.Locale;
+import java.util.Map;
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 
@@ -38,5 +40,18 @@ public class Config {
 		}
 		return null;
 	}
-	
+
+	public static Map<String, String> getProperties(String key) {
+		Map<String, String> matches = new HashMap<String, String>();
+		if (Config.properties != null) {
+			for (String property : Config.properties.keySet()) {
+				if (property.startsWith(key + ".")) {
+					final String value = Config.properties.getString(property);
+					matches.put(property.replace(key + ".", ""), value);
+				}
+			}
+		}
+		return matches;
+	}
+
 }

@@ -8,8 +8,10 @@ package org.bootstrapjsp.facet;
 
 import java.util.Arrays;
 
+import org.bootstrapjsp.mold.DefaultMold;
 import org.bootstrapjsp.mold.Mold;
 import org.bootstrapjsp.tags.Component;
+import org.bootstrapjsp.util.ComponentUtil;
 import org.bootstrapjsp.util.Config;
 
 public class MoldFacet extends Facet<Component, String> {
@@ -26,7 +28,8 @@ public class MoldFacet extends Facet<Component, String> {
 	@Override
 	public boolean setValue(String name, Object value) {
 		if ("mold".equals(name)) {
-			super.setValue(value.toString());
+			this.setValue(value.toString());
+			return true;
 		} else if (this.mold != null) {
 			return this.mold.setAttribute(name, value);
 		}
@@ -61,17 +64,17 @@ public class MoldFacet extends Facet<Component, String> {
 			try {
 				moldClass = Class.forName(name);
 			} catch (ClassNotFoundException e) {
-				final Class<? extends Component> clazz = super.getTag().getClass();
-				final String packageName = clazz.getPackage().getName();
-				final String component = clazz.getName().replace(packageName + ".", "");
-				String classProperty = component.toLowerCase() + ".mold." + name;
+				final String component = ComponentUtil.getComponentName(super.getTag());
+				String classProperty = component + ".mold." + name;
 				String className = Config.getProperty(classProperty);
 				if (className == null) {
-					classProperty = component.toLowerCase() + ".mold._default";
+					classProperty = component + ".mold._default";
 					className = Config.getProperty(classProperty);
 				}
 				if (className != null) {
 					moldClass = Class.forName(className);
+				} else {
+					moldClass = DefaultMold.class;
 				}
 			}
 			if (moldClass != null) {
