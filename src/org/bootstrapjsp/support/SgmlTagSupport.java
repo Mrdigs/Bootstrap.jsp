@@ -68,6 +68,8 @@ public class SgmlTagSupport extends NestedTagSupport implements DynamicAttribute
 			for (Entry<String, Object> attribute : attributes.entrySet()) {
 				this.setAttribute(attribute.getKey(), attribute.getValue());
 			}
+		} else if ("element".equals(localName) && value instanceof String) {
+			this.setElement((String) value);
 		} else if (value != null) {
 			this.setAttribute(localName, value);
 		}
