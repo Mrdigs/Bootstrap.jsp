@@ -12,7 +12,7 @@ import javax.servlet.jsp.JspException;
 
 import org.bootstrapjsp.facet.LabelFacet;
 import org.bootstrapjsp.facet.Labelable;
-import org.bootstrapjsp.tags.core.misc.Button;
+import org.bootstrapjsp.tags.core.button.Button;
 import org.bootstrapjsp.tags.ext.Message;
 import org.bootstrapjsp.tags.html.Div;
 import org.tldgen.annotations.Tag;
