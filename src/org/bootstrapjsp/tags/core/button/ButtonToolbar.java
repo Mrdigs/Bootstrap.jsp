@@ -4,7 +4,7 @@
  * This program is distributed under LGPL Version 2.1 in the hope that
  * it will be useful, but WITHOUT ANY WARRANTY.
  */
-package org.bootstrapjsp.tags.core.misc;
+package org.bootstrapjsp.tags.core.button;
 
 import org.bootstrapjsp.dialect.Html;
 import org.bootstrapjsp.tags.html.Div;
