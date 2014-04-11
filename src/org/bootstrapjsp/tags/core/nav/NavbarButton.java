@@ -10,7 +10,7 @@ import javax.servlet.jsp.tagext.JspTag;
 
 import org.bootstrapjsp.dialect.Html;
 import org.bootstrapjsp.facet.AlignFacet;
-import org.bootstrapjsp.tags.core.misc.Button;
+import org.bootstrapjsp.tags.core.button.Button;
 import org.tldgen.annotations.Tag;
 
 @Tag(name="navbarbutton",dynamicAttributes=true)
