@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import javax.servlet.jsp.JspException;
 
+import org.bootstrapjsp.dialect.BlockLevel;
 import org.bootstrapjsp.dialect.Html;
 import org.bootstrapjsp.tags.Component;
 import org.tldgen.annotations.Attribute;
@@ -18,7 +19,7 @@ import org.tldgen.annotations.Tag;
  * </p>
  */
 @Tag(bodyContent=BodyContent.SCRIPTLESS,dynamicAttributes=true)
-public class Table extends Component {
+public class Table extends Component implements BlockLevel {
 
 	private boolean responsive = false;
 	
