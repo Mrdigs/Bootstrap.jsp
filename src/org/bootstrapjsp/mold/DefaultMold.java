@@ -3,6 +3,7 @@ package org.bootstrapjsp.mold;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import org.bootstrapjsp.exception.InvalidAttributeException;
 import org.bootstrapjsp.tags.Component;
 import org.bootstrapjsp.util.ComponentUtil;
 import org.bootstrapjsp.util.Config;
@@ -18,7 +19,7 @@ public class DefaultMold extends Mold<Component> {
 				component.setAttribute(attribute.getKey(), attribute.getValue());
 			}
 		} else {
-			throw new IllegalArgumentException("Mold not found for " + name + ": " + mold);
+			throw new InvalidAttributeException(component, "mold", mold);
 		}
 	}
 

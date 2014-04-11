@@ -11,6 +11,7 @@ import java.io.IOException;
 import javax.servlet.jsp.JspException;
 
 import org.bootstrapjsp.dialect.Html;
+import org.bootstrapjsp.exception.InvalidAttributeException;
 import org.bootstrapjsp.tags.Component;
 import org.bootstrapjsp.tags.html.Style;
 import org.tldgen.annotations.Attribute;
@@ -58,7 +59,7 @@ public class Navbar extends Component {
 			style.setBody("body { padding-" + fixed + ": 70px; }");
 			super.appendChild(style, AFTER_BODY);
 		} else {
-			throw new IllegalArgumentException("Invalid fixed value: " + fixed);
+			throw new InvalidAttributeException(this, "fixed", fixed);
 		}
 	}
 	

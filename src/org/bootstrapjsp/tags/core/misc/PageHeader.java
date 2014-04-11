@@ -6,6 +6,7 @@
  */
 package org.bootstrapjsp.tags.core.misc;
 
+import org.bootstrapjsp.exception.InvalidAttributeException;
 import org.bootstrapjsp.facet.LabelFacet;
 import org.bootstrapjsp.facet.Labelable;
 import org.bootstrapjsp.tags.html.Div;
@@ -34,7 +35,7 @@ public class PageHeader extends Div implements Labelable {
 		if (level > 0 && level < 7) {
 			this.heading.setLevel(level);
 		} else {
-			throw new IllegalArgumentException("Illegal level: " + level);
+			throw new InvalidAttributeException(this, "level", level);
 		}
 	}
 }
