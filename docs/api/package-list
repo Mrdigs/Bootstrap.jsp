@@ -1,9 +1,12 @@
 org.bootstrapjsp.bind
 org.bootstrapjsp.dialect
+org.bootstrapjsp.exception
 org.bootstrapjsp.facet
+org.bootstrapjsp.mold
 org.bootstrapjsp.support
 org.bootstrapjsp.tags
 org.bootstrapjsp.tags.core.breadcrumb
+org.bootstrapjsp.tags.core.button
 org.bootstrapjsp.tags.core.carousel
 org.bootstrapjsp.tags.core.dropdown
 org.bootstrapjsp.tags.core.form
