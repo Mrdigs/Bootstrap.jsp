@@ -8,7 +8,6 @@ package org.bootstrapjsp.tags.core.button;
 
 import org.bootstrapjsp.dialect.Html;
 import org.bootstrapjsp.facet.ContextFacet;
-import org.bootstrapjsp.facet.ForwardFacet;
 import org.bootstrapjsp.facet.IconFacet;
 import org.bootstrapjsp.facet.LabelFacet;
 import org.bootstrapjsp.facet.SizeFacet;
@@ -29,7 +28,6 @@ public class Button extends Component implements Toggleable {
 	public Button() { 
 		super(Html.BUTTON_ELEMENT);
 		super.setAttribute(Html.CLASS_ATTRIBUTE, "btn");
-		super.addFacet(new ForwardFacet());
 		super.addFacet(new SizeFacet("btn", null));
 		super.addFacet(new ContextFacet("btn", "default"));
 		super.addFacet(new IconFacet());

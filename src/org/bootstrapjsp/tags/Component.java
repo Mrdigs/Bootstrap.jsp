@@ -14,6 +14,7 @@ import javax.servlet.jsp.JspException;
 
 import org.bootstrapjsp.bind.BindFacet;
 import org.bootstrapjsp.facet.Facet;
+import org.bootstrapjsp.facet.ForwardFacet;
 import org.bootstrapjsp.facet.MoldFacet;
 import org.bootstrapjsp.facet.ResponsiveFacet;
 import org.bootstrapjsp.facet.ToggleFacet;
@@ -32,6 +33,7 @@ public abstract class Component extends HtmlTagSupport {
 		this.addFacet(new ResponsiveFacet());
 		this.addFacet(new TooltipFacet());
 		this.addFacet(new ToggleFacet());
+		this.addFacet(new ForwardFacet());
 	}
 
 	public Component(String element, int evaluation) {
