@@ -9,6 +9,7 @@ package org.bootstrapjsp.tags.core.misc;
 import org.bootstrapjsp.dialect.Html;
 import org.bootstrapjsp.facet.ContextFacet;
 import org.bootstrapjsp.facet.MoldFacet;
+import org.bootstrapjsp.tags.core.button.Button;
 import org.bootstrapjsp.tags.html.Div;
 import org.tldgen.annotations.Attribute;
 import org.tldgen.annotations.Tag;
