@@ -7,16 +7,17 @@
 package org.bootstrapjsp.facet;
 
 import org.bootstrapjsp.support.NestedTagSupport;
+import org.bootstrapjsp.tags.Component;
 import org.bootstrapjsp.tags.ext.Message;
 
-public class LabelFacet extends Facet<NestedTagSupport, String> {
+public class LabelFacet extends Facet<Component, String> {
 
 	public LabelFacet() {
 		super("label", null);
 	}
 
 	@Override
-	public void apply(NestedTagSupport tag) {
+	public void apply(Component tag) {
 		if (tag instanceof Labelable) {
 			((Labelable) tag).applyLabel(super.getValue());
 		} else {

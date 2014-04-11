@@ -6,9 +6,9 @@
  */
 package org.bootstrapjsp.facet;
 
-import org.bootstrapjsp.support.BaseTag;
+import org.bootstrapjsp.tags.Component;
 
-public abstract class PrefixedFacet<T extends BaseTag, V> extends Facet<T, V> {
+public abstract class PrefixedFacet<T extends Component, V> extends Facet<T, V> {
 
 	private final String prefix;
 
