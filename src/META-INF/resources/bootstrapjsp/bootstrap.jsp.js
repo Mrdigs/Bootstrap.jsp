@@ -5,31 +5,15 @@
  * the element when it receives a "click" event. Multiple forwards
  * can be separated by commas.
  */
-$(document).on('ready', function() { 
-	var data = 'data-forward';
-	$('[' + data + ']').each(function() {
-		var element = $(this), forwards = element.attr(data);
-		$.each(forwards.split(','), function() {
-			var forward = this.split('=');
-			element.on(forward[0], function() {
-				element.trigger(forward[1]);
-			});
-		});
-	});
-
-});
-
-// TODO Need to amalgamate these functions
-$(document).bind('DOMNodeInserted', function(e) {
+$(document).bind('ready DOMNodeInserted', function(e) {
 	var forwarded = $(e.target).find('[data-forward]');
 	$.each(forwarded, function() {
 		var element = $(this), forwards = element.attr('data-forward');
 		$.each(forwards.split(','), function() {
 			var forward = this.split('=');
-			element.on(forward[0], function() {
-				element.trigger(forward[1]);
+			element.on(forward[0], function(event) {
+				element.trigger({type:forward[1], originalEvent:event});
 			});
 		});
 	});
 });
-
