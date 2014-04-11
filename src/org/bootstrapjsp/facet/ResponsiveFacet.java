@@ -11,7 +11,9 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import org.bootstrapjsp.dialect.BlockLevel;
 import org.bootstrapjsp.dialect.Html;
+import org.bootstrapjsp.exception.InvalidAttributeException;
 import org.bootstrapjsp.tags.Component;
 
 public class ResponsiveFacet extends Facet<Component, Boolean> {
@@ -51,8 +53,12 @@ public class ResponsiveFacet extends Facet<Component, Boolean> {
 	
 	@Override
 	public void apply(Component tag) {
-		for (String clazz : this.classes) {
-			tag.setAttribute(Html.CLASS_ATTRIBUTE, clazz);
+		if (tag instanceof BlockLevel) {
+			for (String clazz : this.classes) {
+				tag.setAttribute(Html.CLASS_ATTRIBUTE, clazz);
+			}
+		} else {
+			throw new InvalidAttributeException("Responsive classes are only available for block level elements");
 		}
 	}
 

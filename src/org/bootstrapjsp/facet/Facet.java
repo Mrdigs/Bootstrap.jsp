@@ -9,9 +9,11 @@ package org.bootstrapjsp.facet;
 import java.util.Arrays;
 import java.util.List;
 
+import org.bootstrapjsp.exception.InvalidAttributeException;
 import org.bootstrapjsp.support.BaseTag;
+import org.bootstrapjsp.tags.Component;
 
-public abstract class Facet<T extends BaseTag, V> {
+public abstract class Facet<T extends Component, V extends Object> {
 
 	private List<V> validValues;
 	
@@ -47,7 +49,7 @@ public abstract class Facet<T extends BaseTag, V> {
 
 	private boolean isValid(V value) {
 		if (this.validValues != null && !this.validValues.contains(value)) {
-			throw new IllegalArgumentException("Illegal value for " + this.name + ": " + value);
+			throw new InvalidAttributeException(this.getTag(), this.name, value);
 		}
 		return true;
 	}
@@ -81,6 +83,10 @@ public abstract class Facet<T extends BaseTag, V> {
 		return this.dflt;
 	}
 
+	public String getName() {
+		return name;
+	}
+	
 	@SuppressWarnings("unchecked")
 	public final void applyTo(BaseTag tag) {
 		final V value = this.getValue();

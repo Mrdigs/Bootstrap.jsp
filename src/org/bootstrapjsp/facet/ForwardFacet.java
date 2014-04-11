@@ -6,6 +6,7 @@
  */
 package org.bootstrapjsp.facet;
 
+import org.bootstrapjsp.exception.InvalidAttributeException;
 import org.bootstrapjsp.tags.Component;
 
 public class ForwardFacet extends Facet<Component, String> {
@@ -19,7 +20,7 @@ public class ForwardFacet extends Facet<Component, String> {
 		if (value.split("[=,]").length % 2 == 0) {
 			super.setValue(value);
 		} else {
-			throw new IllegalArgumentException("Illegal number fo forwards: " + value);
+			throw new InvalidAttributeException(this.getTag(), this.getName(), value);
 		}
 	}
 	
