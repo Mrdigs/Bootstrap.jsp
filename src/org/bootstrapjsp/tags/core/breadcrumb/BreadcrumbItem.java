@@ -18,9 +18,11 @@ import org.tldgen.annotations.Tag;
 @Tag(name="breadcrumbitem",dynamicAttributes=true)
 public class BreadcrumbItem extends ListItem {
 
+	@SuppressWarnings("unchecked")
 	public BreadcrumbItem() {
 		super();
 		super.addFacet(new ActiveFacet(false));
+		super.setValidParents(Breadcrumb.class);
 	}
 	
 }
