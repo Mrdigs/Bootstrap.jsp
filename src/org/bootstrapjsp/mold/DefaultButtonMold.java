@@ -1,12 +1,13 @@
 package org.bootstrapjsp.mold;
 
 import org.bootstrapjsp.dialect.Html;
+import org.bootstrapjsp.exception.InvalidAttributeException;
 import org.bootstrapjsp.facet.ContextFacet;
 import org.bootstrapjsp.facet.IconFacet;
 import org.bootstrapjsp.facet.LabelFacet;
 import org.bootstrapjsp.support.NestedTagSupport;
 import org.bootstrapjsp.tags.TextNode;
-import org.bootstrapjsp.tags.core.misc.Button;
+import org.bootstrapjsp.tags.core.button.Button;
 import org.bootstrapjsp.tags.core.misc.Caret;
 import org.bootstrapjsp.util.Config;
 
@@ -31,7 +32,7 @@ public class DefaultButtonMold extends Mold<Button> {
 				button.getFacet(LabelFacet.class).setValue(label, false);
 				button.getFacet(ContextFacet.class).setValue(context, false);
 			} else {
-				throw new IllegalArgumentException("Mold not found for button: " + mold);
+				throw new InvalidAttributeException(button, "mold", mold);
 			}
 		}
 	}
