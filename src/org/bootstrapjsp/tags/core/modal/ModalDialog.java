@@ -7,13 +7,14 @@
 package org.bootstrapjsp.tags.core.modal;
 
 import org.bootstrapjsp.dialect.Html;
+import org.bootstrapjsp.exception.InvalidAttributeException;
 import org.bootstrapjsp.facet.IconFacet;
 import org.bootstrapjsp.facet.LabelFacet;
 import org.bootstrapjsp.facet.Labelable;
 import org.bootstrapjsp.facet.Moldable;
 import org.bootstrapjsp.facet.SizeFacet;
 import org.bootstrapjsp.facet.Sizeable;
-import org.bootstrapjsp.tags.core.misc.Button;
+import org.bootstrapjsp.tags.core.button.Button;
 import org.bootstrapjsp.tags.html.Div;
 import org.bootstrapjsp.util.Config;
 import org.tldgen.annotations.Attribute;
@@ -64,7 +65,7 @@ public class ModalDialog extends Modal implements Labelable, Sizeable, Moldable 
 			this.setBackdrop("static");
 			this.setKeyboard(false);
 		} else {
-			throw new IllegalArgumentException("Mold not found for modaldialog: " + mold);
+			throw new InvalidAttributeException(this, "mold", mold);
 		}
 	}
 
