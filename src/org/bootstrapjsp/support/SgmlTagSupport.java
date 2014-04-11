@@ -15,6 +15,7 @@ import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.JspWriter;
 import javax.servlet.jsp.tagext.DynamicAttributes;
 
+import org.bootstrapjsp.dialect.BlockLevel;
 import org.bootstrapjsp.util.UidGenerator;
 
 public class SgmlTagSupport extends NestedTagSupport implements DynamicAttributes {
@@ -47,17 +48,29 @@ public class SgmlTagSupport extends NestedTagSupport implements DynamicAttribute
                 writer.print("\"");
     		}
     	}
-    	writer.println(">");
+    	if (this instanceof BlockLevel) {
+    		writer.println(">");
+    	} else {
+    		writer.print(">");    		
+    	}
 		
     	if (this.body != null) {
     		writer.println(this.body);
     	} else {
     		super.doTag();
     	}
-		
+
+    	if (this instanceof BlockLevel) {
+    		writer.println();
+    	}
+
 		writer.print("</");
 		writer.print(this.element);
-		writer.println(">");		
+    	if (this instanceof BlockLevel) {
+    		writer.println(">");
+    	} else {
+    		writer.print(">");    		
+    	}
 	}
 	
 	@Override
