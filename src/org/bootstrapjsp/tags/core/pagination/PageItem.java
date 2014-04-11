@@ -11,6 +11,7 @@ import java.io.IOException;
 import javax.servlet.jsp.JspException;
 
 import org.bootstrapjsp.dialect.Html;
+import org.bootstrapjsp.exception.InvalidAttributeException;
 import org.bootstrapjsp.facet.ActiveFacet;
 import org.bootstrapjsp.facet.DisabledFacet;
 import org.bootstrapjsp.facet.LabelFacet;
@@ -50,13 +51,13 @@ public class PageItem extends ListItem implements Labelable {
 
 	@Attribute(rtexprvalue=true)
 	public void setNext(boolean next) {
-		if (this.previous) throw new IllegalArgumentException("Page item cannot be both next and previous");
+		if (this.previous) throw new InvalidAttributeException("Page item cannot be both next and previous");
 		this.next = next;
 	}
 	
 	@Attribute(rtexprvalue=true)
 	public void setPrevious(boolean previous) {
-		if (this.next) throw new IllegalArgumentException("Page item cannot be both next and previous");
+		if (this.next) throw new InvalidAttributeException("Page item cannot be both next and previous");
 		this.previous = previous;
 	}
 	
