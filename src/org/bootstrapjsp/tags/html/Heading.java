@@ -1,13 +1,15 @@
 package org.bootstrapjsp.tags.html;
 
+import org.bootstrapjsp.dialect.BlockLevel;
 import org.bootstrapjsp.dialect.Html;
+import org.bootstrapjsp.exception.InvalidAttributeException;
 import org.bootstrapjsp.tags.Component;
 import org.tldgen.annotations.Attribute;
 import org.tldgen.annotations.BodyContent;
 import org.tldgen.annotations.Tag;
 
 @Tag(bodyContent=BodyContent.SCRIPTLESS,dynamicAttributes=true)
-public class Heading extends Component {
+public class Heading extends Component implements BlockLevel {
 
 	public Heading() {
 		this(1, null);
@@ -27,7 +29,7 @@ public class Heading extends Component {
 		if (level > 0 && level < 7) {
 			super.setElement("h" + level);
 		} else {
-			throw new IllegalArgumentException("Illegal level: " + level);
+			throw new InvalidAttributeException(this, "level", level);
 		}
 	}
 }

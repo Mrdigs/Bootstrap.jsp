@@ -1,12 +1,13 @@
 package org.bootstrapjsp.tags.html;
 
 import org.bootstrapjsp.dialect.Html;
+import org.bootstrapjsp.dialect.Inline;
 import org.bootstrapjsp.tags.Component;
 import org.tldgen.annotations.BodyContent;
 import org.tldgen.annotations.Tag;
 
 @Tag(bodyContent=BodyContent.SCRIPTLESS,dynamicAttributes=true)
-public class Span extends Component {
+public class Span extends Component implements Inline {
 
 	public Span() {
 		this(null);
