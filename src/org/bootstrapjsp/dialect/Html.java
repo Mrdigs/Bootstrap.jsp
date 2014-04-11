@@ -14,6 +14,8 @@ public class Html {
 
 	public static final String STYLE_ATTRIBUTE = "style";
 
+	public static final String TYPE_ATTRIBUTE = "type";
+
 	public static final String BUTTON_ELEMENT = "button";
 
 	public static final String DIV_ELEMENT = "div";
