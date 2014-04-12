@@ -6,6 +6,7 @@
  */
 package org.bootstrapjsp.facet;
 
+import org.bootstrapjsp.exception.InvalidAttributeException;
 import org.bootstrapjsp.mold.DefaultComponentMold;
 import org.bootstrapjsp.mold.Mold;
 import org.bootstrapjsp.tags.Component;
@@ -63,11 +64,11 @@ public class MoldFacet extends Facet<Component, String> {
 					final Mold<Component> mold = moldClass.asSubclass(Mold.class).cast(object);
 					return mold;
 				} catch (Exception e) {
-					throw new IllegalArgumentException(e);
+					throw new InvalidAttributeException(e.getMessage());
 				}
 			}
 		} catch (ClassNotFoundException e) {
-			throw new IllegalArgumentException(e);
+			throw new InvalidAttributeException(e.getMessage());
 		}
 		return new DefaultComponentMold();
 	}
