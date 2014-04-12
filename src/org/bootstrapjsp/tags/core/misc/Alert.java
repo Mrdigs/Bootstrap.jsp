@@ -8,8 +8,6 @@ package org.bootstrapjsp.tags.core.misc;
 
 import org.bootstrapjsp.dialect.Html;
 import org.bootstrapjsp.facet.ContextFacet;
-import org.bootstrapjsp.facet.MoldFacet;
-import org.bootstrapjsp.tags.core.button.Button;
 import org.bootstrapjsp.tags.html.Div;
 import org.tldgen.annotations.Attribute;
 import org.tldgen.annotations.Tag;
@@ -35,10 +33,9 @@ public class Alert extends Div {
 	@Attribute(rtexprvalue=true)
 	public void setDismissable(boolean dismissable) {
 		if (dismissable) {
-			final Button closeButton = new Button();
-			closeButton.getFacet(MoldFacet.class).setValue("close");
-			closeButton.setDismiss("alert");
-			super.appendChild(closeButton, BEFORE_BODY);
+			final Close close = new Close();
+			close.setDismiss("alert");
+			super.appendChild(close, BEFORE_BODY);
 			super.setAttribute(Html.CLASS_ATTRIBUTE, "alert-dismissable");
 		}
 	}

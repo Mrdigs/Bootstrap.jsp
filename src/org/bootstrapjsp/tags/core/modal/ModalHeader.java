@@ -12,7 +12,7 @@ import javax.servlet.jsp.JspException;
 
 import org.bootstrapjsp.facet.LabelFacet;
 import org.bootstrapjsp.facet.Labelable;
-import org.bootstrapjsp.tags.core.button.Button;
+import org.bootstrapjsp.tags.core.misc.Close;
 import org.bootstrapjsp.tags.ext.Message;
 import org.bootstrapjsp.tags.html.Div;
 import org.tldgen.annotations.Tag;
@@ -31,10 +31,9 @@ public class ModalHeader extends Div implements Labelable {
 	public void doTag() throws JspException, IOException {
 		final ModalDialog modalDialog = super.findAncestor(ModalDialog.class);
 		if (modalDialog != null && modalDialog.isDismissable()) {
-			final Button button = new Button();
-			super.appendChild(button, BEFORE_BODY);
-			button.setDismiss("modal");
-			button.setAttribute("mold", "close");
+			final Close close = new Close();
+			super.appendChild(close, BEFORE_BODY);
+			close.setDismiss("modal");
 		}
 		super.doTag();
 	}

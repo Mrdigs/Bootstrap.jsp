@@ -68,12 +68,12 @@ public abstract class Facet<T extends Component, V extends Object> {
 
 	public final void setValue(V value, boolean override) {
 		if (override || this.value == null) {
-			this.setValue(value);
+			this.value = value;
 		}
 	}
 
 	public void setValue(V value) {
-		this.value = value;
+		this.setValue(value, false);
 	}
 	
 	public final V getValue() {

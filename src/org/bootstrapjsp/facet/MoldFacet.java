@@ -6,9 +6,7 @@
  */
 package org.bootstrapjsp.facet;
 
-import java.util.Arrays;
-
-import org.bootstrapjsp.mold.DefaultMold;
+import org.bootstrapjsp.mold.DefaultComponentMold;
 import org.bootstrapjsp.mold.Mold;
 import org.bootstrapjsp.tags.Component;
 import org.bootstrapjsp.util.ComponentUtil;
@@ -18,11 +16,8 @@ public class MoldFacet extends Facet<Component, String> {
 
 	private Mold<Component> mold;
 	
-	public MoldFacet(String... valid) {
+	public MoldFacet() {
 		super(null, null);
-		if (valid != null && valid.length > 0) {
-			super.setValidValues(Arrays.asList(valid));
-		}
 	}
 
 	@Override
@@ -38,24 +33,14 @@ public class MoldFacet extends Facet<Component, String> {
 
 	@Override
 	public void setValue(String value) {
-		if (super.getTag() instanceof Moldable) {
-			super.setValue(value);
-		} else {
-			this.mold = this.getMold(value);
-			if (this.mold != null) {
-				super.setValue(value);
-			}
-		}
+		this.mold = this.getMold(value);
+		super.setValue(value);
 	}
 	
 	@Override
 	public void apply(Component tag) {
 		final String name = super.getValue();
-		if (tag instanceof Moldable) {
-			((Moldable) tag).applyMold(name);
-		} else if (this.mold != null) {
-			this.mold.apply(tag, name);
-		}
+		this.mold.apply(tag, name);
 	}
 	
 	private Mold<Component> getMold(String name) {
@@ -65,16 +50,10 @@ public class MoldFacet extends Facet<Component, String> {
 				moldClass = Class.forName(name);
 			} catch (ClassNotFoundException e) {
 				final String component = ComponentUtil.getComponentName(super.getTag());
-				String classProperty = component + ".mold." + name;
-				String className = Config.getProperty(classProperty);
-				if (className == null) {
-					classProperty = component + ".mold._default";
-					className = Config.getProperty(classProperty);
-				}
+				final String classProperty = component + ".mold." + name;
+				final String className = Config.getProperty(classProperty);
 				if (className != null) {
 					moldClass = Class.forName(className);
-				} else {
-					moldClass = DefaultMold.class;
 				}
 			}
 			if (moldClass != null) {
@@ -90,7 +69,7 @@ public class MoldFacet extends Facet<Component, String> {
 		} catch (ClassNotFoundException e) {
 			throw new IllegalArgumentException(e);
 		}
-		throw new IllegalArgumentException("Mold not found: " + name);
+		return new DefaultComponentMold();
 	}
 	
 	@Override

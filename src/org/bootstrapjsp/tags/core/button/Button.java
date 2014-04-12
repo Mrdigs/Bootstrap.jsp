@@ -7,23 +7,26 @@
 package org.bootstrapjsp.tags.core.button;
 
 import org.bootstrapjsp.dialect.Html;
+import org.bootstrapjsp.exception.InvalidAttributeException;
 import org.bootstrapjsp.facet.ContextFacet;
 import org.bootstrapjsp.facet.IconFacet;
 import org.bootstrapjsp.facet.LabelFacet;
+import org.bootstrapjsp.facet.Moldable;
 import org.bootstrapjsp.facet.SizeFacet;
 import org.bootstrapjsp.facet.Toggleable;
+import org.bootstrapjsp.support.NestedTagSupport;
 import org.bootstrapjsp.tags.Component;
+import org.bootstrapjsp.tags.TextNode;
+import org.bootstrapjsp.tags.core.misc.Caret;
 import org.tldgen.annotations.Attribute;
 import org.tldgen.annotations.Tag;
 
 /**
  * I am a description
  * 
- * @author darrenscott
- *
  */
 @Tag(dynamicAttributes=true)
-public class Button extends Component implements Toggleable {
+public class Button extends Component implements Toggleable, Moldable {
 
 	public Button() { 
 		super(Html.BUTTON_ELEMENT);
@@ -80,4 +83,14 @@ public class Button extends Component implements Toggleable {
 		}
 	}
 
+	@Override
+	public void applyMold(String mold) {
+		if ("dropdown".equals(mold)) {
+			this.applyToggle("dropdown");
+			super.appendChild(new TextNode(" "), NestedTagSupport.AFTER_BODY);
+			super.appendChild(new Caret(), NestedTagSupport.AFTER_BODY);
+		} else {
+			throw new InvalidAttributeException(this, "mold", mold);
+		}
+	}
 }

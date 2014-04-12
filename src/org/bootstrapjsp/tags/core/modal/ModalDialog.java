@@ -14,6 +14,7 @@ import org.bootstrapjsp.facet.Labelable;
 import org.bootstrapjsp.facet.Moldable;
 import org.bootstrapjsp.facet.SizeFacet;
 import org.bootstrapjsp.facet.Sizeable;
+import org.bootstrapjsp.mold.DefaultMold;
 import org.bootstrapjsp.tags.core.button.Button;
 import org.bootstrapjsp.tags.html.Div;
 import org.bootstrapjsp.util.Config;
@@ -21,7 +22,7 @@ import org.tldgen.annotations.Attribute;
 import org.tldgen.annotations.Tag;
 
 @Tag(name="modaldialog",dynamicAttributes=true)
-public class ModalDialog extends Modal implements Labelable, Sizeable, Moldable {
+public class ModalDialog extends Modal implements Labelable, Sizeable, Moldable, DefaultMold {
 
 	private final Div modalDialog = new Div();		
 
