@@ -38,7 +38,9 @@ requires).
 * Extensions to the Data API, giving you even more control of the behaviour
 of your components, without writing a single line of JavaScript.
 
-* In-line documentation and auto-complete (in IDEs supporting these features only).
+* In-line documentation and auto-complete (in IDEs supporting these features 
+only), so you can see what tags and attributes are available and what they do
+from within your editor.
 
 * The Bootstrap.jsp distribution comes with Bootstrap 3.1.1 bundled, so you can 
 just install the jar file and away you go.
