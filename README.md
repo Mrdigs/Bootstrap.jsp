@@ -31,7 +31,9 @@ where it is not valid or supported by Bootstrap (also classes, i.e. `context="ma
  is not allowed)
 
 * Context aware components - for example, when used within a `navbar`, a `nav` will
-automatically become a `navbar-nav`.
+automatically become a `navbar-nav`. Buttons automatically wrap themselves in button
+groups when used directly in a justified button group (as the Bootstrap specification
+requires).
 
 * Extensions to the Data API, giving you even more control of the behaviour
 of your components, without writing a single line of JavaScript.
