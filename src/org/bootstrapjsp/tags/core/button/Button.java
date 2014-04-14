@@ -6,10 +6,16 @@
  */
 package org.bootstrapjsp.tags.core.button;
 
+import java.io.IOException;
+
+import javax.servlet.jsp.JspException;
+import javax.servlet.jsp.tagext.JspTag;
+
 import org.bootstrapjsp.dialect.Html;
 import org.bootstrapjsp.exception.InvalidAttributeException;
 import org.bootstrapjsp.facet.ContextFacet;
 import org.bootstrapjsp.facet.IconFacet;
+import org.bootstrapjsp.facet.JustifiedFacet;
 import org.bootstrapjsp.facet.LabelFacet;
 import org.bootstrapjsp.facet.Moldable;
 import org.bootstrapjsp.facet.SizeFacet;
@@ -37,27 +43,21 @@ public class Button extends Component implements Toggleable, Moldable {
 		super.addFacet(new LabelFacet());
 	}
 	
-	/*
 	@Override
-	public void setParent(Tag parent) {
+	public void doTag() throws JspException, IOException {
+		final JspTag parent = super.getParent();
 		if (parent instanceof ButtonGroup) {
 			final ButtonGroup buttonGroup = (ButtonGroup) parent;
-//			if (buttonGroup.isJustified()) {
-				// Hmm now, I want to wrap myself in a tag!
-				// super.ap
-				// setParent is already used and I shouldn't
-				// override it right. appendChild doesn't make
-				// sense. 
-				// but that requires
-				// ok I need some special handling
-				// AND I NEED TO CREATE A NEW BUTTON GROUP
-//				buttonGroup.appendChild(this);
-//			}
+			if (buttonGroup.getFacet(JustifiedFacet.class).getValue()) {
+				if ("button".equals(super.getElement())) {
+					super.wrapIn(new ButtonGroup());
+					return;
+				}
+			}
 		}
-		super.setParent(parent);
+		super.doTag();
 	}
-	*/
-
+	
 	@Attribute(rtexprvalue=true)
 	public void setHref(String href) {
 		super.setAttribute("href", href);
@@ -75,6 +75,13 @@ public class Button extends Component implements Toggleable, Moldable {
 		super.setAttribute("data-target", "#" + target);
 	}
 
+	@Attribute(rtexprvalue=true)
+	public void setBlock(boolean block) {
+		if (block) {
+			super.setAttribute(Html.CLASS_ATTRIBUTE, "btn-block");
+		}
+	}
+	
 	@Override
 	public void applyToggle(String toggle) {
 		super.setAttribute("data-toggle", toggle);
