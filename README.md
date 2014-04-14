@@ -15,12 +15,30 @@ Bootstrap.jsp is for you.
 What does it provide?
 ---------------------
 
-Bootstrap.jsp provides over 70 JSP tags, with a tag for almost every Bootstrap
-class, and attributes for controlling the tag output. Many of the tags have a 
-number of available molds for creating a predefined component, and some have 
-configurable molds so you can define your own.
+* Over 70 JSP tags, covering virtually every Bootstrap class and component, 
+including buttons, alerts, dialogs, navbars, dropdowns, panels, tables and
+many more.
 
-The Bootstrap.jsp distribution comes with Bootstrap 3.1.1 bundled, so you can 
+* A comprehensive [Molding System](https://github.com/Mrdigs/Bootstrap.jsp/wiki/The-Molding-System), 
+allowing you to define preset attributes on all components for easy reuse within your
+project, with a number of molds shipped by default and ready to use.
+
+* Composite component definitions - build custom components comprising several
+standard components.
+
+* Structural Validation - Bootstrap.jsp will not let you use a component type 
+where it is not valid or supported by Bootstrap (also classes, i.e. `context="madeupcontext"`
+ is not allowed)
+
+* Context aware components - for example, when used within a `navbar`, a `nav` will
+automatically become a `navbar-nav`.
+
+* Extensions to the Data API, giving you even more control of the behaviour
+of your components, without writing a single line of JavaScript.
+
+* In-line documentation and auto-complete (in IDEs supporting these features only).
+
+* The Bootstrap.jsp distribution comes with Bootstrap 3.1.1 bundled, so you can 
 just install the jar file and away you go.
 
 For Example?
