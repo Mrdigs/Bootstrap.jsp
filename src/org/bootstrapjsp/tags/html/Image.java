@@ -49,4 +49,11 @@ public class Image extends Component {
 			throw new InvalidAttributeException(this, "shape", shape);
 		}
 	}
+	
+	@Attribute(rtexprvalue=true)
+	public void setThumbnail(boolean thumbnail) {
+		if (thumbnail) {
+			super.setAttribute(Html.CLASS_ATTRIBUTE, "img-thumbnail");
+		}
+	}
 }
