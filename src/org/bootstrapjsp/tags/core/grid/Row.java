@@ -20,6 +20,6 @@ public class Row extends Div {
 	@SuppressWarnings("unchecked")
 	public Row() {
 		super("row");
-		super.setValidParents(Container.class);
+		super.setValidParents(Container.class, Row.class);
 	}
 }
