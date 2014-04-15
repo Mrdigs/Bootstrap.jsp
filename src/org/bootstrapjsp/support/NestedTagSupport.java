@@ -60,7 +60,14 @@ public abstract class NestedTagSupport extends SimpleTagSupport implements BaseT
 	@Override
 	public void setParent(JspTag parent) {
 		if (parent != null && this.parents.size() > 0) {
-			if (!this.parents.contains(parent.getClass())) {
+			boolean valid = false;
+			for (Class<? extends BaseTag> clazz : this.parents) {
+				if (clazz.isAssignableFrom(parent.getClass())) {
+					valid = true;
+					break;
+				}
+			}
+			if (!valid) {
 				final StringBuilder error = new StringBuilder("Invalid parent for ");
 				error.append(this).append(": ").append(parent);
 				throw new IllegalArgumentException(error.toString());
