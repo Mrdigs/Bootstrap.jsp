@@ -14,7 +14,18 @@ import org.tldgen.annotations.BodyContent;
 import org.tldgen.annotations.Tag;
 
 /**
- * A progress bar.
+ * A &lt;progress&gt; usually contains one or more &lt;progressbar&gt;s,
+ * however, it is not normally required to use this tag unless you are using
+ * more than one &lt;progressbar&gt;, since a &lt;progressbar&gt; will 
+ * automatically wrap itself in a &lt;progress&gt; if it is not already.
+ * <p>
+ * <dl>
+ * <dt><b>Example</b></dt>
+ * <dd>&lt;progress&gt;... &lt;/progress&gt;</dd>
+ * <dt><b>Output</b></dt>
+ * <dd>&lt;div class="progress"&gt;... &lt;/div&gt;</dd>
+ * </dl>
+ * </p>
  */
 @Tag(bodyContent=BodyContent.SCRIPTLESS,dynamicAttributes=true)
 public class Progress extends Div {
