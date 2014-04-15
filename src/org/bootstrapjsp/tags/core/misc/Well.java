@@ -13,8 +13,14 @@ import org.tldgen.annotations.Tag;
 
 /**
  * Use the well as a simple effect on an element to give it an inset effect.
- * 
- * <p>&lt;div class="well"&gt;... &lt;/div&gt;</p>
+ * <p>
+ * <dl>
+ * <dt><b>Example</b></dt>
+ * <dd>&lt;b:well size="sm"&gt;... &lt;/b:well&gt;</dd>
+ * <dt><b>Output</b></dt>
+ * <dd>&lt;div class="well well-sm"&gt;... &lt;/div&gt;</dd>
+ * </dl>
+ * </p>
  */
 @Tag(bodyContent=BodyContent.SCRIPTLESS,dynamicAttributes=true)
 public class Well extends Div {
