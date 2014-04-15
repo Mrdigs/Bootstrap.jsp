@@ -44,7 +44,8 @@ public class Column extends Div {
 
 	@Override
 	public void setAttribute(String name, Object value) {
-		if (SIZES.contains(name)) {
+		final String cut = name.replaceFirst("-offset$", "");
+		if (SIZES.contains(cut)) {
 			final StringBuilder clazz = new StringBuilder("col-");
 			clazz.append(name).append("-").append(value);
 			super.setAttribute(Html.CLASS_ATTRIBUTE, clazz.toString());
