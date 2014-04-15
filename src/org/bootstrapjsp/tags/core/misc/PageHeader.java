@@ -6,9 +6,9 @@
  */
 package org.bootstrapjsp.tags.core.misc;
 
-import org.bootstrapjsp.exception.InvalidAttributeException;
 import org.bootstrapjsp.facet.LabelFacet;
 import org.bootstrapjsp.facet.Labelable;
+import org.bootstrapjsp.support.NestedTagSupport;
 import org.bootstrapjsp.tags.html.Div;
 import org.bootstrapjsp.tags.html.Heading;
 import org.tldgen.annotations.Attribute;
@@ -22,7 +22,7 @@ public class PageHeader extends Div implements Labelable {
 	public PageHeader() {
 		super("page-header");
 		super.addFacet(new LabelFacet());
-		super.appendChild(this.heading);
+		super.appendChild(this.heading, NestedTagSupport.BEFORE_BODY);
 	}
 
 	@Override
@@ -32,10 +32,6 @@ public class PageHeader extends Div implements Labelable {
 
 	@Attribute(rtexprvalue=true)
 	public void setLevel(int level) {
-		if (level > 0 && level < 7) {
-			this.heading.setLevel(level);
-		} else {
-			throw new InvalidAttributeException(this, "level", level);
-		}
+		this.heading.setLevel(level);
 	}
 }
