@@ -21,11 +21,12 @@ public class FormControl extends Component {
 
 	/**
 	 * Sets the input type. If 'textarea', the input will be a
-	 * &lt;textarea&gt;, otherwise a &lt;input type="[type]"&gt;
+	 * &lt;textarea&gt;, if 'select', a &lt;select&gt;, otherwise a 
+	 * &lt;input type="[type]"&gt;
 	 */
 	@Attribute(rtexprvalue=true)
 	public void setType(String type) {
-		if ("textarea".equals(type)) {
+		if ("textarea".equals(type) || "select".equals(type)) {
 			super.setElement(type);
 		} else {
 			super.setAttribute("type", type);
