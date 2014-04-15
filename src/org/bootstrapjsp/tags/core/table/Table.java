@@ -15,7 +15,12 @@ import org.tldgen.annotations.Tag;
  * A Bootstrap Table with basic styling - light padding and only horizontal
  * dividers.
  * <p>
- * &lt;table class="table"&gt;...&lt;/table&gt;
+ * <dl>
+ * <dt><b>Example</b></dt>
+ * <dd>&lt;b:table&gt;... &lt;/b:table&gt;</dd>
+ * <dt><b>Output</b></dt>
+ * <dd>&lt;table class="table"&gt;... &lt;/table&gt;</dd>
+ * </dl>
  * </p>
  */
 @Tag(bodyContent=BodyContent.SCRIPTLESS,dynamicAttributes=true)
