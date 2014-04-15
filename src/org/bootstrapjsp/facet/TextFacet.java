@@ -15,7 +15,7 @@ import org.bootstrapjsp.tags.Component;
 public class TextFacet extends PrefixedFacet<Component, String> {
 
 	private static final List<String> VALID = Arrays.asList(
-		"primary", "success", "info", "warning", "danger"
+		"muted", "primary", "success", "info", "warning", "danger"
 	);
 	
 	public TextFacet() {
