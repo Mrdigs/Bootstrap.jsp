@@ -17,6 +17,7 @@ import org.bootstrapjsp.facet.Facet;
 import org.bootstrapjsp.facet.ForwardFacet;
 import org.bootstrapjsp.facet.MoldFacet;
 import org.bootstrapjsp.facet.ResponsiveFacet;
+import org.bootstrapjsp.facet.TextFacet;
 import org.bootstrapjsp.facet.ToggleFacet;
 import org.bootstrapjsp.facet.TooltipFacet;
 import org.bootstrapjsp.support.BaseTag;
@@ -34,6 +35,7 @@ public abstract class Component extends HtmlTagSupport {
 		this.addFacet(new TooltipFacet());
 		this.addFacet(new ToggleFacet());
 		this.addFacet(new ForwardFacet());
+		this.addFacet(new TextFacet());
 	}
 
 	public Component(String element, int evaluation) {
