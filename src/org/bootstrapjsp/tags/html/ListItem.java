@@ -12,9 +12,11 @@ public class ListItem extends Component {
 		this(null);
 	}
 
+	@SuppressWarnings("unchecked")
 	public ListItem(String clazz) {
 		super("li");
 		super.setAttribute(Html.CLASS_ATTRIBUTE, clazz);
+		super.setValidParents(List.class);
 	}
 
 }
