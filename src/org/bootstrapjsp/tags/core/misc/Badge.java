@@ -12,7 +12,16 @@ import org.tldgen.annotations.BodyContent;
 import org.tldgen.annotations.Tag;
 
 /**
- * A badge.
+ * Easily highlight new or unread items by adding a <i>&lt;badge&gt;</i> to 
+ * links, Bootstrap navs, and more.
+ * <p>
+ * <dl>
+ * <dt><b>Example</b></dt>
+ * <dd>&lt;b:badge align="right"&gt;... &lt;/b:badge&gt;</dd>
+ * <dt><b>Output</b></dt>
+ * <dd>&lt;span class="badge pull-right"&gt;... &lt;/span&gt;</dd>
+ * </dl>
+ * </p>
  */
 @Tag(bodyContent=BodyContent.SCRIPTLESS, dynamicAttributes=true)
 public class Badge extends Span {
