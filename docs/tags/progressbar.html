@@ -12,7 +12,14 @@
                     <div id="wrapper" class="yui-b left-delimiter">
                         <h1>progressbar</h1>
                         <div id="progressbar" class="yui-g bottom-delimiter">
-                            <p></p>
+                            <p>A progress bar. The "striped" attribute is only used if the &lt;progressbar&gt;
+                                is not wrapped in a &lt;progress&gt;, since it is an attribute of that 
+                                component. This component will be automatically wrapped in a &lt;progress&gt;
+                                if it is not already. In other words, if this component is inside a 
+                                &lt;progress&gt;, then used "striped" on that component, otherwise use the
+                                "striped" attribute on this component and the &lt;progress&gt; that it
+                                is automatically wrapped in will acquire the "striped" value.
+                            </p>
                             <table class="tag-info">
                                 <thead>
                                     <tr>
@@ -72,6 +79,13 @@
                                             <div class="flags"><span class="rtexprvalue" title="rtexprvalue">rtexprvalue</span></div>
                                         </td>
                                     </tr>
+                                    <tr>
+                                        <td><span id="striped">striped</span></td>
+                                        <td></td>
+                                        <td>
+                                            <div class="flags"><span class="rtexprvalue" title="rtexprvalue">rtexprvalue</span></div>
+                                        </td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -82,7 +96,6 @@
                         <li><a href="alert.html">alert</a></li>
                         <li><a href="anchor.html">anchor</a></li>
                         <li><a href="badge.html">badge</a></li>
-                        <li><a href="bind.html">bind</a></li>
                         <li><a href="breadcrumb.html">breadcrumb</a></li>
                         <li><a href="breadcrumbitem.html">breadcrumbitem</a></li>
                         <li><a href="button.html">button</a></li>
@@ -95,6 +108,8 @@
                         <li><a href="carouselindicators.html">carouselindicators</a></li>
                         <li><a href="carouselinner.html">carouselinner</a></li>
                         <li><a href="carouselitem.html">carouselitem</a></li>
+                        <li><a href="clearfix.html">clearfix</a></li>
+                        <li><a href="close.html">close</a></li>
                         <li><a href="column.html">column</a></li>
                         <li><a href="container.html">container</a></li>
                         <li><a href="div.html">div</a></li>
@@ -102,11 +117,13 @@
                         <li><a href="dropdown.html">dropdown</a></li>
                         <li><a href="dropdownheader.html">dropdownheader</a></li>
                         <li><a href="dropdownmenu.html">dropdownmenu</a></li>
+                        <li><a href="dropdowntoggle.html">dropdowntoggle</a></li>
                         <li><a href="formcontrol.html">formcontrol</a></li>
                         <li><a href="formgroup.html">formgroup</a></li>
                         <li><a href="glyphicon.html">glyphicon</a></li>
                         <li><a href="heading.html">heading</a></li>
                         <li><a href="iconbar.html">iconbar</a></li>
+                        <li><a href="image.html">image</a></li>
                         <li><a href="include.html">include</a></li>
                         <li><a href="inputgroup.html">inputgroup</a></li>
                         <li><a href="inputgroupaddon.html">inputgroupaddon</a></li>
@@ -153,9 +170,10 @@
                         <li><a href="panel.html">panel</a></li>
                         <li><a href="panelbody.html">panelbody</a></li>
                         <li><a href="panelfooter.html">panelfooter</a></li>
+                        <li><a href="panelgroup.html">panelgroup</a></li>
                         <li><a href="panelheading.html">panelheading</a></li>
                         <li><a href="paneltitle.html">paneltitle</a></li>
-                        <li><a href="paragraph.html">paragraph</a></li>
+                        <li><a href="para.html">para</a></li>
                         <li><a href="progress.html">progress</a></li>
                         <li class="selected"><a href="progressbar.html">progressbar</a></li>
                         <li><a href="row.html">row</a></li>
@@ -166,7 +184,6 @@
                         <li><a href="table.html">table</a></li>
                         <li><a href="tableresponsive.html">tableresponsive</a></li>
                         <li><a href="tabpane.html">tabpane</a></li>
-                        <li><a href="text.html">text</a></li>
                         <li><a href="well.html">well</a></li>
                     </ol>
                 </div>
