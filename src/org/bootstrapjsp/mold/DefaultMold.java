@@ -22,12 +22,15 @@ public class DefaultMold extends Mold<Component> {
 						component.setAttribute(attribute.getKey(), attribute.getValue());
 					}
 				}
-			} else if (component instanceof Moldable) {
-				((Moldable) component).applyMold(type);
-			} else {
-				throw new InvalidAttributeException(component, "mold", type);
+			} else if (!"_default".equals(type)) {
+				if (component instanceof Moldable) {
+					((Moldable) component).applyMold(type);
+				} else {
+					throw new InvalidAttributeException(component, "mold", type);
+				}
 			}
 		}
+		
 	}
 
 	private Map<String, String> getMoldProperties(String component, String mold) {

@@ -18,7 +18,8 @@ public class MoldFacet extends Facet<Component, String> {
 	private Mold<Component> mold;
 	
 	public MoldFacet() {
-		super(null, null);
+		super(null, "_default");
+		this.mold = new DefaultMold();
 	}
 
 	@Override
@@ -33,11 +34,27 @@ public class MoldFacet extends Facet<Component, String> {
 	}
 
 	@Override
+	protected boolean isValid(String value) {
+		// TODO This isn't great as some components set valid values
+		// and expect it to be validated. Which is fine when they
+		// are moldables and should only be called with the correct
+		// valid molds. Once way round it might be to have them 
+		// return true or false depending on whether the values
+		// are valid or not.
+		// There is a wider issue in that properties based molds
+		// can't be mixed with non properties based ones, this 
+		// whole area needs reworking. The facet itself should
+		// do the properties implementation I think, not
+		// DefaultMold.
+		return true;
+	}
+	
+	@Override
 	public void setValue(String value) {
 		this.mold = this.getMold(value);
 		super.setValue(value);
 	}
-	
+
 	@Override
 	public void apply(Component tag) {
 		final String name = super.getValue();
