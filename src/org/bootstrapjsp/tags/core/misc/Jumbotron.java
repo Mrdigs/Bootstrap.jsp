@@ -11,9 +11,15 @@ import org.tldgen.annotations.BodyContent;
 import org.tldgen.annotations.Tag;
 
 /**
- * A Jumbotron.
+ * A lightweight, flexible component that can optionally extend the entire 
+ * viewport to showcase key content on your site.
  * <p>
- * &lt;div class="jumbotron"&gt;...&lt;/div&gt;
+ * <dl>
+ * <dt><b>Example</b></dt>
+ * <dd>&lt;b:jumbotron&gt;... &lt;/b:jumbotron&gt;</dd>
+ * <dt><b>Output</b></dt>
+ * <dd>&lt;div class="jumbotron"&gt;...&lt;/div&gt;</dd>
+ * </dl>
  * </p>
  */
 @Tag(bodyContent=BodyContent.SCRIPTLESS,dynamicAttributes=true)
