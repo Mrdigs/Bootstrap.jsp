@@ -12,7 +12,14 @@
                     <div id="wrapper" class="yui-b left-delimiter">
                         <h1>progressbar</h1>
                         <div id="progressbar" class="yui-g bottom-delimiter">
-                            <p></p>
+                            <p>A progress bar. The "striped" attribute is only used if the &lt;progressbar&gt;
+                                is not wrapped in a &lt;progress&gt;, since it is an attribute of that 
+                                component. This component will be automatically wrapped in a &lt;progress&gt;
+                                if it is not already. In other words, if this component is inside a 
+                                &lt;progress&gt;, then used "striped" on that component, otherwise use the
+                                "striped" attribute on this component and the &lt;progress&gt; that it
+                                is automatically wrapped in will acquire the "striped" value.
+                            </p>
                             <table class="tag-info">
                                 <thead>
                                     <tr>
@@ -67,6 +74,13 @@
                                     </tr>
                                     <tr>
                                         <td><span id="label">label</span></td>
+                                        <td></td>
+                                        <td>
+                                            <div class="flags"><span class="rtexprvalue" title="rtexprvalue">rtexprvalue</span></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><span id="striped">striped</span></td>
                                         <td></td>
                                         <td>
                                             <div class="flags"><span class="rtexprvalue" title="rtexprvalue">rtexprvalue</span></div>
@@ -156,6 +170,7 @@
                         <li><a href="panel.html">panel</a></li>
                         <li><a href="panelbody.html">panelbody</a></li>
                         <li><a href="panelfooter.html">panelfooter</a></li>
+                        <li><a href="panelgroup.html">panelgroup</a></li>
                         <li><a href="panelheading.html">panelheading</a></li>
                         <li><a href="paneltitle.html">paneltitle</a></li>
                         <li><a href="para.html">para</a></li>
