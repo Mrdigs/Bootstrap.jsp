@@ -23,8 +23,8 @@ many more.
 allowing you to define preset attributes on all components for easy reuse within your
 project, with a number of molds shipped by default and ready to use.
 
-* [Composite Components](https://github.com/Mrdigs/Bootstrap.jsp/wiki/Composite-Components) 
-- build custom components comprising several standard components.
+* [Composite Components](https://github.com/Mrdigs/Bootstrap.jsp/wiki/Composite-Components) - 
+build custom components comprising several standard components.
 
 * Structural Validation - Bootstrap.jsp will not let you use a component type 
 where it is not valid or supported by Bootstrap (also classes, i.e. `context="madeupcontext"`
