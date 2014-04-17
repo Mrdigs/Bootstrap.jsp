@@ -10,9 +10,15 @@ import org.bootstrapjsp.tags.html.List;
 import org.tldgen.annotations.Tag;
 
 /**
- * A Breadcrumb.
- * 
- * &lt;ol class="breadcrumb"&gt;...&lt;/ol&gt;
+ * Indicate the current page's location within a navigational hierarchy.
+ * <p>
+ * <dl>
+ * <dt><b>Example</b></dt>
+ * <dd>&lt;b:breadcrumb&gt;... &lt;/b:breadcrumb&gt;</dd>
+ * <dt><b>Output</b></dt>
+ * <dd>&lt;ol class="breadcrumb"&gt;...&lt;/ol&gt;</dd>
+ * </dl>
+ * </p>
  */
 @Tag(dynamicAttributes=true)
 public class Breadcrumb extends List {

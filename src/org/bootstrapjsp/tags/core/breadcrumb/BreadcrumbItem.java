@@ -12,8 +12,14 @@ import org.tldgen.annotations.Tag;
 
 /**
  * A Breadcrumb item.
- * 
- * &lt;li&gt;...&lt;/li&gt
+ * <p>
+ * <dl>
+ * <dt><b>Example</b></dt>
+ * <dd>&lt;b:breadcrumbitem active="true"&gt;... &lt;/b:breadcrumbitem&gt;</dd>
+ * <dt><b>Output</b></dt>
+ * <dd>&lt;li class="active"&gt;... &lt;/li&gt;</dd>
+ * </dl>
+ * </p>
  */
 @Tag(name="breadcrumbitem",dynamicAttributes=true)
 public class BreadcrumbItem extends ListItem {
