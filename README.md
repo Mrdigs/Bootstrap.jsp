@@ -130,11 +130,15 @@ would probably want to write your own `head` anyway.
 Documentation
 -------------
 
-There are [Javadoc API docs](http://mrdigs.github.io/Bootstrap.jsp/docs/api/) 
-and [TLD docs](http://mrdigs.github.io/Bootstrap.jsp/docs/tags/) available.
+The [TLD Docs](http://mrdigs.github.io/Bootstrap.jsp/docs/tags/) are currently 
+the best source of documentation in terms of what tags are available and what 
+they do. The tags themselves are all in there. The descriptions are not complete,
+but are being expanded and improved all the time so it is worth checking back
+every now and again.
 
-The [Wiki](https://github.com/Mrdigs/Bootstrap.jsp/wiki/_pages) is slowly being built 
-and already contains some useful information that is worth taking a look at.
+The [Wiki](https://github.com/Mrdigs/Bootstrap.jsp/wiki/_pages) is slowly being 
+built as well and already contains some useful information that is worth taking 
+a look at.
 
-Full documentation on all the tags with examples is a work in progress and will
-be available shortly.
+Reference documentation on all the tags with examples is a work in progress and 
+will be available shortly.
