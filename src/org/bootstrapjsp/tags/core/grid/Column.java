@@ -19,7 +19,14 @@ import org.tldgen.annotations.Tag;
 
 /**
  * A Grid Column. The class defaults to "col-md-1", but can be overidden
- * and/or extended using the "xs", "sm", "md", and "lg" attributes.
+ * and/or extended using the <i>"xs"</i>, <i>"sm"</i>, <i>"md"</i>, and 
+ * <i>"lg"</i> attributes.
+ * <p>
+ * You can also use the <i>"[size]-offset"</i>, <i>"[size]-push"</i>
+ * and <i>"[size]-pull"</i> attributes to set the offset, push and
+ * pull on [size] devices - e.g. <i>sm-offset="2"</i> will set a
+ * ".col-sm-offset-2" class.
+ * </p>
  */
 @Tag(bodyContent=BodyContent.SCRIPTLESS, dynamicAttributes=true)
 public class Column extends Div {
@@ -44,7 +51,7 @@ public class Column extends Div {
 
 	@Override
 	public void setAttribute(String name, Object value) {
-		final String cut = name.replaceFirst("-offset$", "");
+		final String cut = name.replaceFirst("-(offset|push|pull)$", "");
 		if (SIZES.contains(cut)) {
 			final StringBuilder clazz = new StringBuilder("col-");
 			clazz.append(name).append("-").append(value);
