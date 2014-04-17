@@ -14,17 +14,19 @@ public class DefaultMold extends Mold<Component> {
 	@Override
 	public void apply(Component component, String mold) {
 		final String name = ComponentUtil.getComponentName(component);
-		final Map<String, String> attributes = this.getMoldProperties(name, mold);
-		if (attributes.size() > 0) {
-			for (Entry<String, String> attribute : attributes.entrySet()) {
-				if (!ComponentUtil.setProperty(component, attribute.getKey(), attribute.getValue())) {
-					component.setAttribute(attribute.getKey(), attribute.getValue());
+		for (String type : mold.split(" ")) {
+			final Map<String, String> attributes = this.getMoldProperties(name, type);		
+			if (attributes.size() > 0) {
+				for (Entry<String, String> attribute : attributes.entrySet()) {
+					if (!ComponentUtil.setProperty(component, attribute.getKey(), attribute.getValue())) {
+						component.setAttribute(attribute.getKey(), attribute.getValue());
+					}
 				}
+			} else if (component instanceof Moldable) {
+				((Moldable) component).applyMold(type);
+			} else {
+				throw new InvalidAttributeException(component, "mold", type);
 			}
-		} else if (component instanceof Moldable) {
-			((Moldable) component).applyMold(mold);
-		} else {
-			throw new InvalidAttributeException(component, "mold", mold);
 		}
 	}
 
