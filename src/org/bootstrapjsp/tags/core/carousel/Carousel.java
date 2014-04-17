@@ -19,9 +19,17 @@ import org.tldgen.annotations.Attribute;
 import org.tldgen.annotations.Tag;
 
 /**
- * A carousel.
+ * A generic plugin and component for cycling through elements like a carousel.
+ * Controls and indicators are automatically added unless disabled with the
+ * <i>controls</i> and <i>indicators</i> attributes.
+ * 
  * <p>
- * &lt;div class="carousel"&gt;...&lt;/div&gt;
+ * <dl>
+ * <dt><b>Example</b></dt>
+ * <dd>&lt;b:carousel&gt;... &lt;/b:carousel&gt;</dd>
+ * <dt><b>Output</b></dt>
+ * <dd>&lt;div class="carousel"&gt;...&lt;/div&gt;</dd>
+ * </dl>
  * </p>
  */
 @Tag(dynamicAttributes=true)
