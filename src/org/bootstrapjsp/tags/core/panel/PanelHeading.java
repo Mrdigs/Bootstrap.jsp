@@ -16,7 +16,8 @@ import org.tldgen.annotations.Tag;
  * You may also include a <i>&lt;paneltitle&gt;</i> to add a pre-styled heading.
  * <p>
  * If you set a <i>label</i> attribute then a <i>&lt;paneltitle&gt;</i> will
- * automatically be added for you.
+ * automatically be added for you. Use the <i>level</i> attribute to control
+ * the level of the <i>&lt;paneltitle&gt;</i>.
  * </p>
  * <p>
  * <dl>
@@ -30,6 +31,8 @@ import org.tldgen.annotations.Tag;
 @Tag(name="panelheading",dynamicAttributes=true)
 public class PanelHeading extends Div implements Labelable {
 
+	private PanelTitle panelTitle = new PanelTitle();
+	
 	public PanelHeading() {
 		super("panel-heading");
 		super.addFacet(new LabelFacet());
@@ -37,13 +40,16 @@ public class PanelHeading extends Div implements Labelable {
 	
 	public PanelHeading(String label) {
 		this();
-		if (label != null) {
-			this.getFacet(LabelFacet.class).setValue(label);
-		}
+		this.setAttribute("label", label);
+	}
+	
+	public void setLevel(int level) {
+		this.panelTitle.setLevel(level);
 	}
 	
 	@Override
 	public void applyLabel(String label) {
-		super.appendChild(new PanelTitle(label), BEFORE_BODY);
+		this.panelTitle.setAttribute("label", label);
+		super.appendChild(this.panelTitle, BEFORE_BODY);
 	}
 }
