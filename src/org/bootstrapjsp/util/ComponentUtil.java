@@ -21,16 +21,18 @@ public class ComponentUtil {
 		try {
 			for (Method setMethod :component.getClass().getMethods()) {
 				if (setMethod.getName().equals(setMethodName)) {
-					final Class<?> parameterType = setMethod.getParameterTypes()[1];
+					final Class<?> parameterType = setMethod.getParameterTypes()[0];
 					if (String.class.equals(parameterType)) {
 						setMethod.invoke(component, new Object[] {value});
-					} else if (Boolean.class.equals(parameterType)) {
+					} else if (Boolean.class.equals(parameterType) || Boolean.TYPE.equals(parameterType)) {
 						final Boolean bool = Boolean.valueOf(value);
 						setMethod.invoke(component, new Object[] {bool});
 					}
 					return true;
 				}
 			}
+		} catch (RuntimeException e) {
+			throw e;
 		} catch (Exception e) {
 			throw new RuntimeException(e);
 		}
