@@ -133,7 +133,7 @@ Documentation
 There are [Javadoc API docs](http://mrdigs.github.io/Bootstrap.jsp/docs/api/) 
 and [TLD docs](http://mrdigs.github.io/Bootstrap.jsp/docs/tags/) available.
 
-The [Wiki](https://github.com/Mrdigs/Bootstrap.jsp/wiki) is slowly being built 
+The [Wiki](https://github.com/Mrdigs/Bootstrap.jsp/wiki/_pages) is slowly being built 
 and already contains some useful information that is worth taking a look at.
 
 Full documentation on all the tags with examples is a work in progress and will
