@@ -35,6 +35,11 @@ public class Progress extends Div {
 		super.addFacet(new ActiveFacet(false));
 	}
 	
+	/**
+	 * Uses a gradient to create a striped effect. Not available in IE8. Note
+	 * that if you use this component inside a &lt;progress&gt;, you should set 
+	 * "striped" on that component instead.
+	 */
 	@Attribute(rtexprvalue=true)
 	public void setStriped(boolean striped) {
 		if (striped) {
