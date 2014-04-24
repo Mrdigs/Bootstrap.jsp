@@ -14,7 +14,12 @@ import org.tldgen.annotations.Tag;
 /**
  * A Dropdown header.
  * <p>
- * &lt;li class="dropdown-header" role="persentaton"&gt;...&lt;/li&gt;
+ * <dl>
+ * <dt><b>Example</b></dt>
+ * <dd>&lt;dropdownheader label="Title"/&gt;</dd>
+ * <dt><b>Output</b></dt>
+ * <dd>&lt;li class="dropdown-header" role="presentation&gt;Title&lt;/li&gt;</dd>
+ * </dl>
  * </p>
  */
 @Tag(name="dropdownheader", dynamicAttributes=true)
