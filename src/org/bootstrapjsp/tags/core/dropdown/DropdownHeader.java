@@ -18,7 +18,7 @@ import org.tldgen.annotations.Tag;
  * <dt><b>Example</b></dt>
  * <dd>&lt;dropdownheader label="Title"/&gt;</dd>
  * <dt><b>Output</b></dt>
- * <dd>&lt;li class="dropdown-header" role="presentation&gt;Title&lt;/li&gt;</dd>
+ * <dd>&lt;li class="dropdown-header" role="presentation"&gt;Title&lt;/li&gt;</dd>
  * </dl>
  * </p>
  */
