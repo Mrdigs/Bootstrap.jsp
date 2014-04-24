@@ -13,7 +13,12 @@ import org.tldgen.annotations.Tag;
 /**
  * A dropdown divider.
  * <p>
- * &lt;li class="divider" role="presentation"&gt;
+ * <dl>
+ * <dt><b>Example</b></dt>
+ * <dd>&lt;divider/&gt;</dd>
+ * <dt><b>Output</b></dt>
+ * <dd>&lt;li class="divider" role="presentation"&gt;&lt;/li&gt;</dd>
+ * </dl>
  * </p>
  */
 @Tag(dynamicAttributes=true)
