@@ -12,13 +12,30 @@
                     <div id="wrapper" class="yui-b left-delimiter">
                         <h1>progressbar</h1>
                         <div id="progressbar" class="yui-g bottom-delimiter">
-                            <p>A progress bar. The "striped" attribute is only used if the &lt;progressbar&gt;
-                                is not wrapped in a &lt;progress&gt;, since it is an attribute of that 
-                                component. This component will be automatically wrapped in a &lt;progress&gt;
-                                if it is not already. In other words, if this component is inside a 
-                                &lt;progress&gt;, then used "striped" on that component, otherwise use the
-                                "striped" attribute on this component and the &lt;progress&gt; that it
-                                is automatically wrapped in will acquire the "striped" value.
+                            <p>Provide up-to-date feedback on the progress of a workflow or action with 
+                                simple yet flexible progress bars.
+                                
+                                <p>
+                                    This component will be automatically wrapped in a &lt;progress&gt; if it is 
+                                    not already.
+                                    
+                                </p>
+                                
+                                <p>
+                                    
+                                    <dl>
+                                        
+                                        <dt><b>Example</b></dt>
+                                        
+                                        <dd>&lt;b:progressbar&gt;... &lt;/b:progressbar&gt;</dd>
+                                        
+                                        <dt><b>Output</b></dt>
+                                        
+                                        <dd>&lt;div class="progress"&gt;&lt;div class="progressbar"&gt;...&lt;/div&gt;&lt;/div&gt;</dd>
+                                        
+                                    </dl>
+                                    
+                                </p>
                             </p>
                             <table class="tag-info">
                                 <thead>
@@ -81,7 +98,10 @@
                                     </tr>
                                     <tr>
                                         <td><span id="striped">striped</span></td>
-                                        <td></td>
+                                        <td>Uses a gradient to create a striped effect. Not available in IE8. Note
+                                            that if you use this component inside a &lt;progress&gt;, you should set 
+                                            "striped" on that component instead.
+                                        </td>
                                         <td>
                                             <div class="flags"><span class="rtexprvalue" title="rtexprvalue">rtexprvalue</span></div>
                                         </td>
