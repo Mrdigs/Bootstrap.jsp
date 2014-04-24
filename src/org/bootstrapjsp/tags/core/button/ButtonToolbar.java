@@ -10,6 +10,18 @@ import org.bootstrapjsp.dialect.Html;
 import org.bootstrapjsp.tags.html.Div;
 import org.tldgen.annotations.Tag;
 
+/**
+ * Combine sets of button groups into a button toolbar for more complex 
+ * components.
+ * <p>
+ * <dl>
+ * <dt><b>Example</b></dt>
+ * <dd>&lt;buttontoolbar&gt;... &lt;/buttontoolbar&gt;</dd>
+ * <dt><b>Output</b></dt>
+ * <dd>&lt;div class="btn-toolbar" role="toolbar"&gt;... &lt;/div&gt;</dd>
+ * </dl>
+ * </p>
+ */
 @Tag(name="buttontoolbar",dynamicAttributes=true)
 public class ButtonToolbar extends Div {
 
