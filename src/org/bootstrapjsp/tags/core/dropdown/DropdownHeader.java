@@ -12,7 +12,7 @@ import org.bootstrapjsp.tags.html.ListItem;
 import org.tldgen.annotations.Tag;
 
 /**
- * A Dropdown header.
+ * Add a header to label sections of actions in any dropdown menu.
  * <p>
  * <dl>
  * <dt><b>Example</b></dt>
