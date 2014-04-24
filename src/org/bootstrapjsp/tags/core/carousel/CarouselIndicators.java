@@ -37,10 +37,6 @@ import org.tldgen.annotations.Tag;
  * </dd>
  * </dl>
  * </p>
-
- * <p>
- * &lt;ol class="carousel-indicators"&gt;...&lt;/ol&gt;
- * </p>
  */
 @Tag(name="carouselindicators",dynamicAttributes=true)
 public class CarouselIndicators extends List {
