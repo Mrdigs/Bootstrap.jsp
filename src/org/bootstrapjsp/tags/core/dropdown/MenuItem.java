@@ -18,9 +18,17 @@ import org.tldgen.annotations.Tag;
 
 /**
  * A Menu Item. Menu Items always contain anchors. The body of the tag will
- * be the body of the anchor.
+ * be the body of the anchor. Set the <i>"href"</i> of the anchor using the
+ * <i>"href"</i> attribute.
  * <p>
- * &lt;li role="presentation"&gt;&lt;a role="menuitem"&gt;...&lt;/a&gt;&lt;/li&gt;
+ * <dl>
+ * <dt><b>Example</b></dt>
+ * <dd>&lt;menuitem href="#"&gt;...&lt;/menuitem&gt;</dd>
+ * <dt><b>Output</b></dt>
+ * <dd>&lt;li role="presentation"&gt;
+ * &lt;a role="menuitem" tabindex="-1" href="#"&gt;...&lt;/a&gt;
+ * &lt;/li&gt;</dd>
+ * </dl>
  * </p>
  */
 @Tag(name="menuitem", dynamicAttributes=true)
