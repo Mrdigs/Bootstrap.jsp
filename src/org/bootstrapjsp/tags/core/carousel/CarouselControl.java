@@ -16,9 +16,18 @@ import org.bootstrapjsp.tags.html.Anchor;
 import org.tldgen.annotations.Tag;
 
 /**
- * A carousel control.
+ * A carousel control. Carousel controls are automatically added to a 
+ * <i>&lt;carousel&gt;</i> unless explicitly disabled, so there is rarely any
+ * need to use this tag directly. When used within a <i>&lt;carousel&gt;</i> tag,
+ * the <i>"href"</i> attribute is automatically added with the correct id of
+ * of the Carousel. 
  * <p>
- * &lt;a class="carousel-control"&gt;...&lt;/a&gt;
+ * <dl>
+ * <dt><b>Example</b></dt>
+ * <dd>&lt;carouselcontrol&gt;... &lt;/carouselcontrol&gt;</dd>
+ * <dt><b>Output</b></dt>
+ * <dd>&lt;div class="carousel-control"&gt;...&lt;/div&gt;</dd>
+ * </dl>
  * </p>
  */
 @Tag(name="carouselcontrol",dynamicAttributes=true)

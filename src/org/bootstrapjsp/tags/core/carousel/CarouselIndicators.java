@@ -19,7 +19,25 @@ import org.tldgen.annotations.Tag;
 
 /**
  * A carousel indicator list. The specified number of indicators are 
- * automatically created.
+ * automatically created. Carousel indicators are automatically added to a 
+ * <i>&lt;carousel&gt;</i> unless explicitly disabled, so there is rarely any
+ * need to use this tag directly. When used within a <i>&lt;carousel&gt;</i> tag,
+ * the <i>"target"</i>, <i>"slides"</i> and <i>"active"</i> attributes are 
+ * automatically set. 
+ * <p>
+ * <dl>
+ * <dt><b>Example</b></dt>
+ * <dd>&lt;carouselindicators slides="2" target="mycarousel"/&gt;</dd>
+ * <dt><b>Output</b></dt>
+ * <dd>
+ * &lt;div class="carousel-control"&gt;
+ * &lt;li data-target="#mycarousel" data-slide-to="0"&gt;&lt;/li&gt;
+ * &lt;li data-target="#mycarousel" data-slide-to="1"&gt;&lt;/li&gt;
+ * &lt;/div&gt;
+ * </dd>
+ * </dl>
+ * </p>
+
  * <p>
  * &lt;ol class="carousel-indicators"&gt;...&lt;/ol&gt;
  * </p>
