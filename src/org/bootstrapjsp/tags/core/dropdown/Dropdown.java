@@ -16,7 +16,12 @@ import org.tldgen.annotations.Tag;
  * A Dropdown. The element is a &lt;div&gt; unless the dropdown is
  * added to a nav, when it will switch to an &lt;li&gt;
  * <p>
- * &lt;div class="dropdown"&gt;...&lt;/div&gt;
+ * <dl>
+ * <dt><b>Example</b></dt>
+ * <dd>&lt;dropdown&gt;... &lt;/dropdown&gt;</dd>
+ * <dt><b>Output</b></dt>
+ * <dd>&lt;div class="dropdown"&gt;... &lt;/div&gt;</dd>
+ * </dl>
  * </p>
  */
 @Tag(dynamicAttributes=true)
