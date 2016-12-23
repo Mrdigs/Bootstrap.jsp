@@ -91,23 +91,14 @@ care of the markup for you:
 Installation
 ------------
 
-Grab a JAR file from the dist folder and place it in your WEB-INF/lib folder.
-If you are using a Servlet 3.0 compatible container (e.g. Tomcat 7 or higher),
-that's all there is to it.
-
-If your container is < Servlet 3.0 compatible then you will need to add a
-servlet to your web.xml to allow the container to serve the bundled Bootstrap
-and supporting files from the JAR file:
+After having build the project, add as a dependency:
 
 ```xml
-<servlet>
-	<servlet-name>ResourceServlet</servlet-name>
-	<servlet-class>org.bootstrapjsp.util.ResourceServlet</servlet-class>
-</servlet>
-<servlet-mapping>
-	<servlet-name>ResourceServlet</servlet-name>
-	<url-pattern>/bootstrapjsp/*</url-pattern>
-</servlet-mapping>
+        <dependency>
+            <groupId>Mrdigs</groupId>
+            <artifactId>Bootstrap.jsp</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
 ```
 
 Getting Started
