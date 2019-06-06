@@ -6,8 +6,10 @@
  */
 package org.bootstrapjsp.support;
 
+import javax.servlet.jsp.PageContext;
 import javax.servlet.jsp.tagext.SimpleTag;
 
 public interface BaseTag extends SimpleTag {
 
+	public PageContext getPageContext();
 }
