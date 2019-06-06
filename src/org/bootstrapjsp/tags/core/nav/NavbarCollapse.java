@@ -6,6 +6,7 @@
  */
 package org.bootstrapjsp.tags.core.nav;
 
+import org.bootstrapjsp.facet.AlignFacet;
 import org.bootstrapjsp.tags.html.Div;
 import org.tldgen.annotations.Tag;
 
@@ -14,6 +15,7 @@ public class NavbarCollapse extends Div {
 	
 	public NavbarCollapse() {
 		super("collapse navbar-collapse");
+		super.addFacet(new AlignFacet("navbar"));
 	}
 
 }
