@@ -9,6 +9,7 @@ package org.bootstrapjsp.tags.core.nav;
 import org.bootstrapjsp.dialect.Html;
 import org.bootstrapjsp.facet.AlignFacet;
 import org.bootstrapjsp.tags.Component;
+import org.tldgen.annotations.Attribute;
 import org.tldgen.annotations.Tag;
 
 @Tag(name="navbarform",dynamicAttributes=true)
@@ -19,5 +20,11 @@ public class NavbarForm extends Component {
 		super.setAttribute(Html.CLASS_ATTRIBUTE, "navbar-form");
 		super.addFacet(new AlignFacet("navbar"));
 	}
-	
+
+	@Attribute(rtexprvalue=true)
+	public void setInline(boolean inline) {
+		if (inline) {
+			super.setAttribute(Html.CLASS_ATTRIBUTE, "form-inline");
+		}
+	}
 }
